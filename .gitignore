@@ -1,0 +1,17 @@
+# Hugo build artefacts
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+.hugo_build.lock
+
+# Theme (re-cloned by GH Actions on every build)
+/themes/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
