@@ -22,3 +22,5 @@ Built and deployed by [NAIRA-ENGINE](https://github.com/gracerus5x-creator).
 
 Don't edit files directly in `content/posts/` — they're overwritten by the pipeline.
 Theme and config tweaks (`hugo.toml`) are safe to hand-edit; they survive pipeline runs.
+
+<!-- redeploy trigger 1780268263 -->
