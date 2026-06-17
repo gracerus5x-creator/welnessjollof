@@ -1,10 +1,18 @@
 {{/*
   extend_head.html — appended to <head> by PaperMod.
   Injects:
-    1. Schema.org Article JSON-LD on post pages (Google rich snippets + AdSense)
-    2. Google Analytics 4 (if Site.Params.googleAnalytics set)
-    3. Cloudflare Web Analytics (if Site.Params.cloudflareAnalyticsToken set)
+    1. brand.css (custom design system — bypasses PaperMod's auto-bundle
+       which silently dropped our extended CSS in production)
+    2. Schema.org Article JSON-LD on post pages (Google rich snippets + AdSense)
+    3. Google Analytics 4 (if Site.Params.googleAnalytics set)
+    4. Cloudflare Web Analytics (if Site.Params.cloudflareAnalyticsToken set)
 */}}
+
+{{/* --- Brand stylesheet (direct injection) --- */}}
+{{- with resources.Get "css/extended/brand.css" -}}
+  {{- $brand := . | resources.Minify | resources.Fingerprint -}}
+  <link rel="stylesheet" href="{{ $brand.RelPermalink }}" integrity="{{ $brand.Data.Integrity }}">
+{{- end -}}
 
 {{/* --- Schema.org Article JSON-LD (post pages only) --- */}}
 {{- if and .IsPage (eq .Section "posts") -}}
