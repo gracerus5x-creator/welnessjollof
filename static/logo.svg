@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" role="img" aria-label="Welness Jollof">
+  <defs>
+    <linearGradient id="wj-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F766E"/>
+      <stop offset="100%" stop-color="#065F5C"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(25, 25)">
+    <rect x="55" y="6" width="10" height="50" rx="4" fill="#065F5C" transform="rotate(20 60 30)"/>
+    <ellipse cx="65" cy="6" rx="7" ry="4" fill="#0A4A47" transform="rotate(20 60 30)"/>
+    <path d="M 8 60 Q 8 100, 50 105 Q 92 100, 92 60 Z" fill="url(#wj-grad)"/>
+    <ellipse cx="50" cy="60" rx="42" ry="8" fill="#0A4A47"/>
+    <ellipse cx="50" cy="60" rx="40" ry="6" fill="#065F5C"/>
+    <path d="M 30 75 Q 45 65, 55 80 Q 50 90, 38 88 Q 30 85, 30 75 Z" fill="#FAFAF7"/>
+    <path d="M 32 78 Q 42 76, 50 84" stroke="#0F766E" stroke-width="1.2" fill="none"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="145" y="80" font-size="44" font-weight="700" fill="#0F766E">Welness</text>
+    <text x="145" y="125" font-size="38" font-weight="400" font-style="italic" fill="#0A0A0A">Jollof</text>
+  </g>
+</svg>

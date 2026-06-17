@@ -70,10 +70,10 @@ icon = "logo.svg"
 iconHeight = 40
 
 [params.cover]
-image = "/og-image.svg"
-hidden = false
-hiddenInList = false
-hiddenInSingle = false
+image = "og-image.svg"
+hidden = true
+hiddenInList = true
+hiddenInSingle = true
 
 [markup.goldmark.renderer]
 unsafe = true
