@@ -27,25 +27,29 @@ cloudflareAnalyticsToken = ""
 [[params.homeCategories]]
 title = "Nerve Health"
 icon = "🧠"
-url = "/categories/nerve-health/"
+url = "/posts/"
+# Original: url = "/categories/nerve-health/"
 description = "B-vitamins, ALA, supplement evidence for neuropathy — translated for normals."
 
 [[params.homeCategories]]
 title = "Supplements 101"
 icon = "💊"
-url = "/categories/supplements/"
+url = "/posts/"
+# Original: url = "/categories/supplements/"
 description = "What works, what's marketing, what to avoid. Peer-reviewed sources only."
 
 [[params.homeCategories]]
 title = "Longevity & Metabolism"
 icon = "🌱"
-url = "/categories/longevity/"
+url = "/posts/"
+# Original: url = "/categories/longevity/"
 description = "Vitamin D, omega-3, methylated Bs, sleep, glucose — the evidence-backed basics."
 
 [[params.homeCategories]]
 title = "How to Read a Supplement Label"
 icon = "🔬"
-url = "/categories/practical/"
+url = "/posts/"
+# Original: url = "/categories/practical/"
 description = "Spot greenwashing, contamination risks, and dosage games before you buy."
 
 [params.homeInfoParams]
@@ -54,15 +58,15 @@ Content = "Evidence-led supplement, nerve-health, and wellness guides — pharma
 
 [params.assets]
 disableHLJS = true
-favicon = "/favicon.svg"
-favicon16x16 = "/favicon.svg"
-favicon32x32 = "/favicon.svg"
-apple_touch_icon = "/favicon.svg"
-safari_pinned_tab = "/favicon.svg"
+favicon = "favicon.svg"
+favicon16x16 = "favicon.svg"
+favicon32x32 = "favicon.svg"
+apple_touch_icon = "favicon.svg"
+safari_pinned_tab = "favicon.svg"
 
 [params.label]
 text = "Welness Jollof"
-icon = "/logo.svg"
+icon = "logo.svg"
 iconHeight = 40
 
 [params.cover]

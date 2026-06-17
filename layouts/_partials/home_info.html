@@ -15,7 +15,7 @@
     {{ with site.Params.homeCategories }}
     <div class="home-categories" role="list">
         {{ range . }}
-        <a class="home-category-card" href="{{ .url }}" role="listitem">
+        <a class="home-category-card" href="{{ .url | relURL }}" role="listitem">
             <div class="home-category-icon">{{ .icon | safeHTML }}</div>
             <div class="home-category-body">
                 <h3 class="home-category-title">{{ .title }}</h3>

@@ -8,7 +8,7 @@ cover:
   image: og-image.svg
   alt: Cover
   relative: false
-  hidden: false
+  hidden: true
 tags:
 - b12-symptoms
 - guide
