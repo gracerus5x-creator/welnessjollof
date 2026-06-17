@@ -27,28 +27,28 @@ cloudflareAnalyticsToken = ""
 [[params.homeCategories]]
 title = "Nerve Health"
 icon = "🧠"
-url = "/posts/"
+url = "posts/"
 # Original: url = "/categories/nerve-health/"
 description = "B-vitamins, ALA, supplement evidence for neuropathy — translated for normals."
 
 [[params.homeCategories]]
 title = "Supplements 101"
 icon = "💊"
-url = "/posts/"
+url = "posts/"
 # Original: url = "/categories/supplements/"
 description = "What works, what's marketing, what to avoid. Peer-reviewed sources only."
 
 [[params.homeCategories]]
 title = "Longevity & Metabolism"
 icon = "🌱"
-url = "/posts/"
+url = "posts/"
 # Original: url = "/categories/longevity/"
 description = "Vitamin D, omega-3, methylated Bs, sleep, glucose — the evidence-backed basics."
 
 [[params.homeCategories]]
 title = "How to Read a Supplement Label"
 icon = "🔬"
-url = "/posts/"
+url = "posts/"
 # Original: url = "/categories/practical/"
 description = "Spot greenwashing, contamination risks, and dosage games before you buy."
 
@@ -85,7 +85,7 @@ endLevel = 4
 [[menu.main]]
 identifier = "posts"
 name = "Posts"
-url = "/posts/"
+url = "posts/"
 weight = 10
 
 [[menu.main]]
