@@ -1,0 +1,11 @@
+{{/*
+  Minimal funnel shortcode — renders a simple CTA card.
+  Used by legacy articles that reference {{< funnel >}}.
+  Future: replace with full conversion funnel from Hyperframes.
+*/}}
+<div class="funnel-cta" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e5e7eb; border-radius: 12px; background: #fafafa;">
+  <p style="margin: 0; font-weight: 600;">{{ .Get "title" | default "Get the full guide" }}</p>
+  {{ with .Get "url" }}
+  <p style="margin: 0.6em 0 0;"><a href="{{ . }}" rel="nofollow sponsored">Continue reading →</a></p>
+  {{ end }}
+</div>
