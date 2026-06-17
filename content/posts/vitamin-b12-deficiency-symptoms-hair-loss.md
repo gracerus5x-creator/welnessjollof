@@ -78,7 +78,7 @@ Below is a structured comparison of options that meet a reasonable bar for purit
 
 ### Option 1 — Sublingual Methylcobalamin (iHerb-stocked brands like Jarrow Formulas or Now Foods)
 
-[Jarrow Formulas Methyl B-12 Sublingual](AFFILIATE_LINK_PLACEHOLDER:iherb:jarrow)
+[Jarrow Formulas Methyl B-12 Sublingual](https://www.iherb.com/search?kw=jarrow&rcode=PFR1152)
 
 **Pros:**
 - Bioactive methylcobalamin — no conversion needed
@@ -93,7 +93,7 @@ Below is a structured comparison of options that meet a reasonable bar for purit
 
 ### Option 2 — Cyanocobalamin Tablets (Amazon — drugstore brands like Nature Made or Solgar)
 
-[Nature Made Vitamin B12 Tablets](AFFILIATE_LINK_PLACEHOLDER:amazon:nature-made)
+[Nature Made Vitamin B12 Tablets](https://www.amazon.com/s?k=nature-made)
 
 **Pros:**
 - Inexpensive, widely available
@@ -109,7 +109,7 @@ Below is a structured comparison of options that meet a reasonable bar for purit
 
 ### Option 3 — B-Complex with Methylcobalamin + Methylfolate (iHerb)
 
-[Thorne Basic B Complex](AFFILIATE_LINK_PLACEHOLDER:iherb:thorne)
+[Thorne Basic B Complex](https://www.iherb.com/search?kw=thorne&rcode=PFR1152)
 
 **Pros:**
 - Covers B12, folate, B6, and the rest of the B family
@@ -139,9 +139,9 @@ It's worth being honest: B12 deficiency is one cause of diffuse hair shedding am
 
 If your hair is thinning and you're also dragging through the day, tingling in the extremities, or noticing tongue or mood changes, B12 deficiency belongs on your differential. A simple blood test and a well-chosen supplement — methylcobalamin for higher-risk patients, cyanocobalamin for general repletion — can restore the metabolic conditions your follicles need to stay in the growth phase.
 
-For most readers I'd start with a [sublingual methylcobalamin from a reputable brand](AFFILIATE_LINK_PLACEHOLDER:iherb:jarrow) and re-test B12 levels in 8–12 weeks. Pair it with a proper diagnosis from your doctor, and give the hair cycle the months it actually needs to respond.
+For most readers I'd start with a [sublingual methylcobalamin from a reputable brand](https://www.iherb.com/search?kw=jarrow&rcode=PFR1152) and re-test B12 levels in 8–12 weeks. Pair it with a proper diagnosis from your doctor, and give the hair cycle the months it actually needs to respond.
 
-**👉 Ready to start? Browse pharmacist-vetted B12 options [here](AFFILIATE_LINK_PLACEHOLDER:iherb:jarrow) and bring your choice to your next doctor's appointment for review.**
+**👉 Ready to start? Browse pharmacist-vetted B12 options [here](https://www.iherb.com/search?kw=jarrow&rcode=PFR1152) and bring your choice to your next doctor's appointment for review.**
 
 ---
 

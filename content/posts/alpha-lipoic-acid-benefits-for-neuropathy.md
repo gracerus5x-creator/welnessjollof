@@ -87,7 +87,7 @@ When I tested several oral ALA products with patient consultations in mind, thre
 
 Below is a head-to-head of two formulations frequently asked about at the pharmacy counter. Both are widely available through major retailers.
 
-### Option 1: [Doctor's Best Alpha-Lipoic Acid 600 mg](AFFILIATE_LINK_PLACEHOLDER:iherb:doctors-best)
+### Option 1: [Doctor's Best Alpha-Lipoic Acid 600 mg](https://www.iherb.com/search?kw=doctors-best&rcode=PFR1152)
 
 **Pros:**
 - Hits the 600 mg dose used in most clinical trials
@@ -100,7 +100,7 @@ Below is a head-to-head of two formulations frequently asked about at the pharma
 
 **Best for:** Cost-conscious users who want a research-aligned dose and don't need the R-isomer specifically.
 
-### Option 2: [Nature's Bounty Alpha Lipoic Acid](AFFILIATE_LINK_PLACEHOLDER:amazon:natures-bounty)
+### Option 2: [Nature's Bounty Alpha Lipoic Acid](https://www.amazon.com/s?k=natures-bounty)
 
 **Pros:**
 - Lower per-capsule dose (often 200–300 mg) — easier to titrate
