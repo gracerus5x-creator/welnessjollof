@@ -1,0 +1,33 @@
+{{- /*
+  Override of PaperMod's home_info — richer hero with category cards.
+  Reads optional `site.Params.homeCategories` (each: title, icon, url, description).
+*/ -}}
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+
+    {{ with site.Params.homeCategories }}
+    <div class="home-categories" role="list">
+        {{ range . }}
+        <a class="home-category-card" href="{{ .url }}" role="listitem">
+            <div class="home-category-icon">{{ .icon | safeHTML }}</div>
+            <div class="home-category-body">
+                <h3 class="home-category-title">{{ .title }}</h3>
+                <p class="home-category-desc">{{ .description }}</p>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}

@@ -19,12 +19,57 @@ ShowToc = true
 ShowBreadCrumbs = true
 disableScrollToTop = false
 
+# Analytics — leave blank until you have the IDs; the partial gracefully no-ops.
+googleAnalytics = ""
+cloudflareAnalyticsToken = ""
+
+# Home category cards (shown under the hero on /)
+[[params.homeCategories]]
+title = "Nerve Health"
+icon = "🧠"
+url = "/categories/nerve-health/"
+description = "B-vitamins, ALA, supplement evidence for neuropathy — translated for normals."
+
+[[params.homeCategories]]
+title = "Supplements 101"
+icon = "💊"
+url = "/categories/supplements/"
+description = "What works, what's marketing, what to avoid. Peer-reviewed sources only."
+
+[[params.homeCategories]]
+title = "Longevity & Metabolism"
+icon = "🌱"
+url = "/categories/longevity/"
+description = "Vitamin D, omega-3, methylated Bs, sleep, glucose — the evidence-backed basics."
+
+[[params.homeCategories]]
+title = "How to Read a Supplement Label"
+icon = "🔬"
+url = "/categories/practical/"
+description = "Spot greenwashing, contamination risks, and dosage games before you buy."
+
 [params.homeInfoParams]
 Title = "Welness Jollof"
 Content = "Evidence-led supplement, nerve-health, and wellness guides — pharmacist-backed, plain language."
 
 [params.assets]
 disableHLJS = true
+favicon = "/favicon.svg"
+favicon16x16 = "/favicon.svg"
+favicon32x32 = "/favicon.svg"
+apple_touch_icon = "/favicon.svg"
+safari_pinned_tab = "/favicon.svg"
+
+[params.label]
+text = "Welness Jollof"
+icon = "/logo.svg"
+iconHeight = 40
+
+[params.cover]
+image = "/og-image.svg"
+hidden = false
+hiddenInList = false
+hiddenInSingle = false
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -38,3 +83,27 @@ identifier = "posts"
 name = "Posts"
 url = "/posts/"
 weight = 10
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 20
+
+[[menu.main]]
+identifier = "contact"
+name = "Contact"
+url = "/contact/"
+weight = 30
+
+[[menu.main]]
+identifier = "disclosure"
+name = "Disclosure"
+url = "/disclosure/"
+weight = 40
+
+[[menu.main]]
+identifier = "privacy"
+name = "Privacy"
+url = "/privacy/"
+weight = 50

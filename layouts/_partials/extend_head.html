@@ -1,0 +1,73 @@
+{{/*
+  extend_head.html — appended to <head> by PaperMod.
+  Injects:
+    1. Schema.org Article JSON-LD on post pages (Google rich snippets + AdSense)
+    2. Google Analytics 4 (if Site.Params.googleAnalytics set)
+    3. Cloudflare Web Analytics (if Site.Params.cloudflareAnalyticsToken set)
+*/}}
+
+{{/* --- Schema.org Article JSON-LD (post pages only) --- */}}
+{{- if and .IsPage (eq .Section "posts") -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ .Summary | jsonify }}{{ end }},
+  "image": [{{ with site.Params.assets.ogImage }}{{ (printf "%s%s" site.BaseURL .) | jsonify }}{{ else }}{{ (printf "%sog-image.svg" site.BaseURL) | jsonify }}{{ end }}],
+  "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "author": {
+    "@type": "Organization",
+    "name": {{ site.Params.author | jsonify }},
+    "url": {{ site.BaseURL | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.Title | jsonify }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ (printf "%slogo.svg" site.BaseURL) | jsonify }}
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ .Permalink | jsonify }}
+  }
+  {{- with index .Params "naira_engine" -}}
+  ,"keywords": {{ with .keyword }}{{ . | jsonify }}{{ else }}""{{ end }}
+  {{- end -}}
+}
+</script>
+{{- end -}}
+
+{{/* --- Organization JSON-LD on home --- */}}
+{{- if .IsHome -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ site.Title | jsonify }},
+  "url": {{ site.BaseURL | jsonify }},
+  "logo": {{ (printf "%slogo.svg" site.BaseURL) | jsonify }},
+  "description": {{ site.Params.description | jsonify }}
+}
+</script>
+{{- end -}}
+
+{{/* --- Google Analytics 4 --- */}}
+{{- with site.Params.googleAnalytics -}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', {{ . | jsonify }}, { anonymize_ip: true });
+</script>
+{{- end -}}
+
+{{/* --- Cloudflare Web Analytics --- */}}
+{{- with site.Params.cloudflareAnalyticsToken -}}
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "{{ . }}"}'></script>
+{{- end -}}

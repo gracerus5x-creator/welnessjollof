@@ -1,0 +1,25 @@
+{{/*
+  Custom link render hook.
+  - External links → open in new tab + rel="noopener noreferrer" (security).
+  - Affiliate / partner links → also add rel="sponsored nofollow" (FTC + Google).
+  - Internal links → unchanged.
+  Detection: any link whose host differs from .Site.BaseURL host is external.
+  Heuristic for affiliate: host matches any of the known affiliate / partner domains.
+*/}}
+{{- $url := .Destination -}}
+{{- $text := .Text -}}
+{{- $title := .Title -}}
+{{- $isExternal := and (or (hasPrefix $url "http://") (hasPrefix $url "https://")) (not (in $url site.BaseURL)) -}}
+{{- $affiliateHosts := slice "impact.com" "shareasale.com" "amazon.com" "amzn.to" "iherb.com" "jumia.com" "claude.ai" "anthropic.com" "openai.com" "jasper.ai" "notion.so" "grammarly.com" "surferseo.com" "semrush.com" "convertkit.com" "teachable.com" "bamboo" "cowrywise" "risevest" "trove" "piggyvest" -}}
+{{- $isAffiliate := false -}}
+{{- range $affiliateHosts -}}
+  {{- if in $url . -}}{{- $isAffiliate = true -}}{{- end -}}
+{{- end -}}
+{{- if $isExternal -}}
+  <a href="{{ $url | safeURL }}"
+     target="_blank"
+     {{- if $isAffiliate }} rel="sponsored nofollow noopener noreferrer"{{- else }} rel="noopener noreferrer"{{- end }}
+     {{- with $title }} title="{{ . }}"{{- end }}>{{ $text | safeHTML }}</a>
+{{- else -}}
+  <a href="{{ $url | safeURL }}"{{- with $title }} title="{{ . }}"{{- end }}>{{ $text | safeHTML }}</a>
+{{- end -}}

@@ -1,0 +1,219 @@
+/* ============================================================================
+   WELNESS JOLLOF — Premium design system
+   Inspired by: Examine.com, Healthline, MedPage Today
+   Aesthetic: Editorial trust, clinical credibility, calm authority
+   ============================================================================ */
+
+:root {
+  --primary:    #0F766E;
+  --primary-50: #F0FDFA;
+  --primary-100:#CCFBF1;
+  --secondary:  #065F5C;
+  --accent:     #14B8A6;
+  --tertiary:   #0A0A0A;
+  --content:    #1F2937;
+  --code-bg:    #F4F7F5;
+  --border:     #E4E7E6;
+  --theme:      #FAFAF7;
+  --entry:      #FFFFFF;
+  --muted:      #6B7280;
+  --success:    #10B981;
+  --warning:    #F59E0B;
+  --danger:     #DC2626;
+
+  --font-serif: "Source Serif Pro", "Charter", Georgia, 'Times New Roman', serif;
+  --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Playfair Display", "Source Serif Pro", Georgia, serif;
+}
+.dark {
+  --primary:    #14B8A6;
+  --primary-50: #0A2E29;
+  --primary-100:#0F3B35;
+  --secondary:  #0F766E;
+  --accent:     #2DD4BF;
+  --tertiary:   #E4E7E6;
+  --content:    #E5E7EB;
+  --code-bg:    #18181B;
+  --border:     #27272A;
+  --theme:      #0A1A18;
+  --entry:      #18272B;
+  --muted:      #9CA3AF;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- Base typography — editorial serif for body, display serif for h1 ----- */
+body, html { font-family: var(--font-serif); -webkit-font-smoothing: antialiased;
+             color: var(--content); }
+h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em;
+     font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.1; }
+h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.01em;
+     font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; margin-top: 2em; }
+h3 { font-family: var(--font-display); font-weight: 600;
+     font-size: clamp(1.3rem, 2.4vw, 1.65rem); margin-top: 1.6em; }
+p, li { line-height: 1.85; font-size: 1.1rem; }
+.nav, #menu, .logo a strong, .post-tags a, .pagination a { font-family: var(--font-sans); }
+
+/* --- Header — calm, editorial ---------------------------------------------- */
+.nav { padding: 16px 0; border-bottom: 1px solid var(--border);
+       background: rgba(250, 250, 247, 0.95); backdrop-filter: blur(8px); }
+.logo a { gap: 14px; }
+.logo a img { border-radius: 50%; box-shadow: 0 2px 6px rgba(15,118,110,0.18); }
+.logo a strong { font-weight: 700; letter-spacing: -0.02em; font-size: 1.3rem;
+                  color: var(--primary); font-family: var(--font-display); }
+#menu li a { font-weight: 600; padding: 8px 14px; border-radius: 6px;
+             font-size: 0.95rem; color: var(--content); }
+#menu li a:hover { background: var(--primary-50); color: var(--primary); }
+
+/* --- Hero / home page ------------------------------------------------------ */
+.home-info { padding: 64px 48px; margin-bottom: 32px;
+              background: linear-gradient(135deg, var(--primary-50) 0%, rgba(255,255,255,0) 100%);
+              border-radius: 8px; border-top: 4px solid var(--primary); }
+.home-info .post-title { font-family: var(--font-display);
+                          font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 800;
+                          color: var(--content); margin-bottom: 16px; }
+.home-info .post-title::after {
+  content: ''; display: block; width: 80px; height: 4px;
+  background: var(--primary); margin-top: 16px; border-radius: 2px;
+}
+.home-info .post-content p { font-size: 1.25rem; color: var(--muted);
+                              max-width: 65ch; line-height: 1.7; font-style: italic; }
+
+/* --- Article cards (list/index) ------------------------------------------- */
+.post-entry { border-radius: 8px; border: 1px solid var(--border); padding: 28px;
+              transition: all 0.2s ease; background: var(--entry);
+              border-left: 4px solid var(--primary); }
+.post-entry:hover { transform: translateY(-2px);
+                     box-shadow: 0 12px 24px rgba(15,118,110,0.10);
+                     border-left-color: var(--accent); }
+.post-entry .entry-header h2 { font-family: var(--font-display); font-weight: 700;
+                                font-size: 1.5rem; margin-top: 0; line-height: 1.2; }
+.post-entry .entry-content { color: var(--muted); font-size: 1.05rem; }
+.post-entry .entry-footer { font-size: 0.9rem; color: var(--muted);
+                             font-family: var(--font-sans); }
+
+/* --- Article body — editorial magazine grade ------------------------------ */
+.post-content { font-size: 1.15rem; line-height: 1.9; max-width: 70ch;
+                font-family: var(--font-serif); }
+.post-content > p:first-of-type {
+  font-size: 1.3rem; line-height: 1.7; color: var(--content);
+}
+.post-content > p:first-of-type::first-letter {
+  font-family: var(--font-display); font-size: 4.2rem; font-weight: 800;
+  float: left; line-height: 0.85; margin: 8px 14px 0 0;
+  color: var(--primary);
+}
+.post-content h2 { border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.post-content h2::after {
+  content: ''; display: block; width: 60px; height: 3px;
+  background: var(--primary); margin-top: -1px; border-radius: 2px;
+}
+.post-content blockquote {
+  border-left: 4px solid var(--primary); padding: 20px 28px;
+  background: var(--primary-50); border-radius: 0 8px 8px 0;
+  font-style: italic; color: var(--content);
+  font-family: var(--font-serif); font-size: 1.15rem;
+}
+.post-content a { color: var(--primary); text-decoration: underline;
+                   text-underline-offset: 3px; text-decoration-thickness: 1.5px;
+                   transition: all 0.15s; font-weight: 600; }
+.post-content a:hover { color: var(--secondary); text-decoration-thickness: 2px; }
+
+/* --- Citation styling — important for health credibility ------------------ */
+.post-content a[href*="pubmed"], .post-content a[href*="nih.gov"],
+.post-content a[href*="fda.gov"], .post-content a[href*="cochrane"] {
+  background: var(--primary-50); padding: 1px 6px; border-radius: 4px;
+}
+
+/* --- Comparison tables (supplement / dosage tables) ----------------------- */
+.post-content table { width: 100%; border-collapse: collapse;
+                       margin: 32px 0; font-size: 0.98rem;
+                       border-radius: 6px; overflow: hidden;
+                       border: 1px solid var(--border);
+                       font-family: var(--font-sans); }
+.post-content thead { background: var(--primary); color: white; }
+.post-content th { padding: 14px 16px; font-weight: 700; text-align: left;
+                    letter-spacing: 0.02em; font-size: 0.85rem;
+                    text-transform: uppercase; }
+.post-content td { padding: 14px 16px; border-bottom: 1px solid var(--border);
+                    vertical-align: top; }
+.post-content tbody tr:last-child td { border-bottom: none; }
+.post-content tbody tr:nth-child(even) { background: var(--primary-50); }
+
+/* --- Inline code (rare in health but used for dosage figures) ------------ */
+.post-content code:not(pre code) {
+  background: var(--primary-50); color: var(--secondary);
+  padding: 2px 6px; border-radius: 4px; font-size: 0.92em;
+  font-family: var(--font-sans); font-weight: 600;
+}
+
+/* --- Affiliate disclosure + Medical disclaimer ---------------------------- */
+.post-content blockquote:has(strong:first-child),
+.disclosure {
+  background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+  border-left: 4px solid var(--warning);
+  padding: 16px 20px;
+  border-radius: 6px;
+  margin: 24px 0;
+  font-size: 1rem;
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+.medical-disclaimer {
+  background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%);
+  border-left: 4px solid var(--danger);
+  padding: 16px 20px; border-radius: 6px; margin: 32px 0;
+  font-family: var(--font-sans); font-size: 0.95rem;
+}
+.dark .disclosure { background: linear-gradient(135deg, #1F1209 0%, #2A1810 100%); }
+.dark .medical-disclaimer { background: linear-gradient(135deg, #1F0B0B 0%, #2A1414 100%); }
+
+/* --- Tags ------------------------------------------------------------------ */
+.post-tags a { background: var(--primary); color: white; border: none;
+                font-weight: 600; padding: 6px 12px; border-radius: 6px;
+                font-size: 0.8rem; font-family: var(--font-sans); }
+.post-tags a:hover { background: var(--secondary); }
+
+/* --- Pagination ------------------------------------------------------------ */
+.pagination a { background: var(--primary); color: white; padding: 10px 20px;
+                 border-radius: 8px; font-weight: 600; font-family: var(--font-sans); }
+
+/* --- Footer ---------------------------------------------------------------- */
+footer.footer { border-top: 1px solid var(--border); padding: 32px 0;
+                margin-top: 64px; color: var(--muted); font-size: 0.9rem;
+                font-family: var(--font-sans); }
+
+/* --- Last-reviewed badge --------------------------------------------------- */
+.post-meta { font-size: 0.9rem; color: var(--muted); font-family: var(--font-sans);
+             display: flex; gap: 16px; align-items: center; margin-bottom: 24px;
+             padding: 12px 16px; background: var(--primary-50); border-radius: 6px; }
+
+/* --- Home category cards (4-up under hero) -------------------------------- */
+.home-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+                   gap: 18px; margin: 36px 0 12px 0; font-family: var(--font-sans); }
+.home-category-card { display: flex; gap: 14px; padding: 22px;
+                       border: 1px solid var(--border);
+                       border-left: 4px solid var(--primary);
+                       border-radius: 6px;
+                       background: var(--theme); color: var(--content);
+                       text-decoration: none !important; transition: all 0.2s ease;
+                       align-items: flex-start; }
+.home-category-card:hover { transform: translateY(-3px);
+                             border-left-color: var(--accent);
+                             box-shadow: 0 12px 24px rgba(15,118,110,0.10);
+                             color: var(--content) !important; }
+.home-category-icon { font-size: 28px; line-height: 1; flex: 0 0 auto;
+                       background: var(--primary-50); padding: 10px;
+                       border-radius: 50%; }
+.home-category-title { margin: 0 0 6px 0; font-size: 1.1rem; font-weight: 700;
+                        color: var(--content); font-family: var(--font-display); }
+.home-category-desc { margin: 0; font-size: 0.93rem; color: var(--muted); line-height: 1.5; }
+
+@media (max-width: 768px) {
+  .post-content > p:first-of-type::first-letter { font-size: 3.2rem; }
+  .home-info { padding: 32px 24px; }
+  .post-entry { padding: 20px; }
+  .post-content { font-size: 1.08rem; }
+  .home-categories { grid-template-columns: 1fr; }
+}
