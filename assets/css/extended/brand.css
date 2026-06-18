@@ -275,3 +275,48 @@ footer.footer { border-top: 1px solid var(--border); padding: 32px 0;
   .doodle-inline--medium { width: 72px; height: 72px; }
   .doodle-inline--large  { width: 140px; height: 140px; }
 }
+
+/* --- Product affiliate card ------------------------------------------------
+   Two-column card: image left, body right. Stacks on mobile.
+   ------------------------------------------------------------------------- */
+.product-card { display: grid; grid-template-columns: 140px 1fr;
+                 gap: 20px; padding: 20px; margin: 28px 0;
+                 background: linear-gradient(135deg, var(--entry) 0%, var(--primary-50) 100%);
+                 border: 1px solid var(--border); border-left: 4px solid var(--primary);
+                 border-radius: 10px; font-family: var(--font-sans); }
+.product-card__image-link { display: block; }
+.product-card__image { width: 140px; height: 140px; object-fit: contain;
+                        background: #ffffff; border-radius: 8px; padding: 8px;
+                        border: 1px solid var(--border); }
+.product-card__body { display: flex; flex-direction: column; gap: 6px; }
+.product-card__badge { display: inline-block; align-self: flex-start;
+                       background: var(--accent); color: white;
+                       padding: 3px 10px; border-radius: 4px;
+                       font-size: 0.72rem; letter-spacing: 0.04em;
+                       text-transform: uppercase; font-weight: 700; }
+.product-card__name { margin: 4px 0 0 0; font-family: var(--font-display);
+                       font-weight: 700; font-size: 1.25rem;
+                       color: var(--content); line-height: 1.2; }
+.product-card__dosage { color: var(--muted); font-size: 0.95rem; }
+.product-card__price-row { display: flex; align-items: baseline; gap: 12px;
+                            flex-wrap: wrap; margin-top: 4px; }
+.product-card__price { font-family: var(--font-display); font-weight: 700;
+                        font-size: 1.5rem; color: var(--primary); }
+.product-card__price-note { font-size: 0.78rem; color: var(--muted);
+                             font-style: italic; }
+.product-card__cta { display: inline-block; align-self: flex-start;
+                      margin-top: 10px; padding: 10px 18px;
+                      background: var(--primary); color: white;
+                      border-radius: 8px; font-weight: 700;
+                      text-decoration: none; transition: all 0.15s ease; }
+.product-card__cta:hover { background: var(--secondary);
+                            transform: translateX(2px); color: white; }
+.dark .product-card { background: linear-gradient(135deg, var(--entry) 0%,
+                                 rgba(20,184,166,0.06) 100%); }
+.dark .product-card__image { background: #f3f3f1; /* keep light for product visibility */ }
+@media (max-width: 640px) {
+  .product-card { grid-template-columns: 1fr; }
+  .product-card__image,
+  .product-card__image-link { width: 100%; height: 220px; }
+  .product-card__image { object-fit: contain; }
+}

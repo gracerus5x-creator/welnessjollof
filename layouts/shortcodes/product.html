@@ -1,0 +1,31 @@
+{{- $name := .Get "name" -}}
+{{- $p := index site.Data.products $name -}}
+{{- if not $p -}}
+  {{- warnf "product shortcode: unknown product %q" $name -}}
+{{- else -}}
+  {{- if or (eq (printf "%v" $p.price_usd) "TO_VERIFY") (eq (printf "%v" $p.image_url) "TO_VERIFY") -}}
+    {{- warnf "product shortcode: %q has TO_VERIFY fields (price=%v image=%v) — card suppressed" $name $p.price_usd $p.image_url -}}
+  {{- else -}}
+    {{- $href := printf "AFFILIATE_LINK_PLACEHOLDER:iherb:%s" $p.iherb_slug | safeURL -}}
+    <aside class="product-card" itemscope itemtype="https://schema.org/Product">
+      <a class="product-card__image-link" href="{{ $href }}" rel="nofollow sponsored noopener" target="_blank">
+        <img class="product-card__image" src="{{ $p.image_url | relURL }}" alt="{{ $p.name }} on iHerb"
+             width="140" height="140" loading="lazy" itemprop="image">
+      </a>
+      <div class="product-card__body">
+        {{- with $p.badge }}<span class="product-card__badge">{{ . }}</span>{{ end -}}
+        <h3 class="product-card__name" itemprop="name">{{ $p.name }}</h3>
+        <div class="product-card__dosage" itemprop="description">{{ $p.dosage }}</div>
+        <div class="product-card__price-row" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <span class="product-card__price">${{ printf "%.2f" $p.price_usd }}</span>
+          <meta itemprop="priceCurrency" content="USD">
+          <meta itemprop="price" content="{{ printf "%.2f" $p.price_usd }}">
+          <span class="product-card__price-note">price approximate — check iHerb (as of {{ $p.price_verified_at }})</span>
+        </div>
+        <a class="product-card__cta" href="{{ $href }}" rel="nofollow sponsored noopener" target="_blank">
+          Buy on iHerb →
+        </a>
+      </div>
+    </aside>
+  {{- end -}}
+{{- end -}}

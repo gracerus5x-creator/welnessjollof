@@ -15,7 +15,7 @@ methylcobalamin-thorne:
   dosage: "1 mg, 60 capsules"
   price_usd: 24.00
   price_verified_at: "2026-06-18"
-  image_url: TO_VERIFY
+  image_url: "/img/products/methylcobalamin-thorne.jpg"
   iherb_slug: "thorne-methylcobalamin"
   iherb_canonical_url: "https://www.iherb.com/pr/thorne-vitamin-b12-60-capsules-1-mg-per-capsule/18440"
   badge: "pharmacist pick"
@@ -25,7 +25,7 @@ alpha-lipoic-thorne:
   dosage: "300 mg, 60 capsules"
   price_usd: 41.00
   price_verified_at: "2026-06-18"
-  image_url: TO_VERIFY
+  image_url: "/img/products/alpha-lipoic-thorne.jpg"
   iherb_slug: "thorne-alpha-lipoic-acid"
   iherb_canonical_url: "https://www.iherb.com/pr/thorne-alpha-lipoic-acid-60-capsules-300-mg-per-capsule/18734"
   badge: "antioxidant"
