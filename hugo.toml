@@ -17,6 +17,10 @@ ShowCodeCopyButtons = true
 ShowToc = true
 ShowBreadCrumbs = true
 disableScrollToTop = false
+# iHerb affiliate code — non-secret, designed to appear in product URLs.
+# Used by the {{< product >}} shortcode to build canonical iHerb URLs at build
+# time (GH Pages does not run the pipeline's affiliate_resolver).
+iherb_rcode = "PFR1152"
 
 # Analytics — leave blank until you have the IDs; the partial gracefully no-ops.
 googleAnalytics = ""
