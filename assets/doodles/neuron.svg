@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="neuron">
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M118 92 C 100 86 88 102 92 118 C 96 134 116 140 130 132 C 146 124 148 104 138 96 C 132 91 124 90 118 92 Z"/>
+    <path d="M96 104 C 78 96 64 78 56 64"/>
+    <path d="M62 70 C 56 60 54 50 58 42"/>
+    <path d="M58 78 C 46 76 36 70 30 60"/>
+    <path d="M98 86 C 90 70 78 58 64 52"/>
+    <path d="M138 102 C 156 96 174 100 188 112"/>
+    <path d="M182 110 C 194 110 204 116 210 126"/>
+    <path d="M132 124 C 148 132 158 148 158 168"/>
+    <path d="M124 130 L 122 156 C 121 172 124 188 132 198"/>
+    <path d="M132 198 C 138 206 148 210 158 208"/>
+    <path d="M132 198 C 126 206 116 210 106 206"/>
+    <path d="M132 198 C 134 208 142 216 152 218"/>
+  </g>
+  <circle cx="115" cy="112" r="3" fill="currentColor"/>
+  <circle cx="125" cy="118" r="2" fill="currentColor"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="leaf">
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M44 196 C 60 110 110 50 196 44 C 200 86 192 130 168 162 C 142 196 100 208 60 200 C 54 200 48 198 44 196 Z"/>
+    <path d="M44 196 C 84 156 130 116 196 44"/>
+    <path d="M76 162 C 88 154 100 148 114 144"/>
+    <path d="M100 130 C 116 124 132 120 148 118"/>
+    <path d="M124 100 C 140 96 156 94 172 94"/>
+    <path d="M44 196 L 28 212"/>
+  </g>
+</svg>

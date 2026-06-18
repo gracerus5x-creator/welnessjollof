@@ -253,3 +253,25 @@ footer.footer { border-top: 1px solid var(--border); padding: 32px 0;
   .author-block { flex-direction: column; align-items: stretch; }
   .author-block__avatar { width: 64px; height: 64px; }
 }
+
+/* --- Doodle inline ---------------------------------------------------------
+   Hand-drawn SVG accents. SVGs use fill="currentColor" so they inherit
+   .doodle-inline { color: ... }. Three sizes, three alignments.
+   ------------------------------------------------------------------------- */
+.doodle-inline { display: inline-block; vertical-align: middle;
+                  color: var(--primary); line-height: 0; }
+.doodle-inline svg { width: 100%; height: 100%; display: block; }
+.doodle-inline--small  { width: 24px;  height: 24px; }
+.doodle-inline--medium { width: 96px;  height: 96px; margin: 0 16px; }
+.doodle-inline--large  { width: 200px; height: 200px;
+                          display: block; margin: 24px auto; }
+.doodle-inline--right { float: right; margin: 0 0 16px 20px; }
+.doodle-inline--left  { float: left;  margin: 0 20px 16px 0; }
+.doodle-inline--inline { /* default — no float */ }
+.dark .doodle-inline { color: var(--accent); }
+@media (max-width: 640px) {
+  .doodle-inline--right, .doodle-inline--left { float: none;
+                       display: block; margin: 16px auto; }
+  .doodle-inline--medium { width: 72px; height: 72px; }
+  .doodle-inline--large  { width: 140px; height: 140px; }
+}

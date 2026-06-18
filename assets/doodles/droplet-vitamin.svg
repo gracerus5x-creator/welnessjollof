@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="vitamin droplet">
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 28 C 122 28 124 30 126 34 C 138 56 168 100 178 134 C 188 168 168 200 124 202 C 80 204 56 174 64 138 C 72 102 102 58 114 36 C 116 32 118 28 120 28 Z"/>
+    <path d="M120 110 L 120 162"/>
+    <path d="M96 136 L 144 136"/>
+    <path d="M88 150 C 92 162 100 172 112 178"/>
+  </g>
+  <circle cx="100" cy="100" r="3" fill="currentColor"/>
+</svg>

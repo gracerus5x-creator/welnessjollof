@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="lab coat">
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M80 36 C 84 32 96 28 120 28 C 144 28 156 32 160 36"/>
+    <path d="M80 36 L 60 64 L 50 76 L 56 96"/>
+    <path d="M160 36 L 180 64 L 190 76 L 184 96"/>
+    <path d="M56 96 L 58 200 C 58 208 64 212 72 212 L 168 212 C 176 212 182 208 182 200 L 184 96"/>
+    <path d="M80 36 L 100 62 L 120 80 L 140 62 L 160 36"/>
+    <path d="M120 80 L 120 212"/>
+    <path d="M100 62 L 96 90"/>
+    <path d="M140 62 L 144 90"/>
+    <circle cx="112" cy="110" r="2.5" fill="currentColor" stroke="none"/>
+    <circle cx="112" cy="138" r="2.5" fill="currentColor" stroke="none"/>
+    <circle cx="112" cy="166" r="2.5" fill="currentColor" stroke="none"/>
+    <path d="M138 158 L 138 188 L 168 188 L 168 158 Z"/>
+    <path d="M148 158 L 148 152 L 158 152 L 158 158"/>
+  </g>
+</svg>
