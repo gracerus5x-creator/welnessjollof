@@ -1,0 +1,16 @@
+{{- /* Override of PaperMod's author.html (themes/PaperMod/layouts/_partials/author.html).
+       Adds a map-type branch so a [params.author] TOML table whose fields are
+       realName/role/credentials/etc. renders the realName string in <meta name="author">
+       instead of dumping the Go-map representation. */ -}}
+{{- if or .Params.author site.Params.author }}
+    {{- $author := (.Params.author | default site.Params.author) }}
+    {{- $author_type := (printf "%T" $author) }}
+
+    {{- if (or (eq $author_type "[]string") (eq $author_type "[]interface {}")) }}
+        {{- (delimit $author ", " ) }}
+    {{- else if reflect.IsMap $author }}
+        {{- with $author.realName | default $author.name }}{{- . -}}{{- end }}
+    {{- else }}
+        {{- $author }}
+    {{- end }}
+{{- end -}}
