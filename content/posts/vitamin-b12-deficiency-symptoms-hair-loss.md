@@ -35,6 +35,8 @@ This guide walks you through the symptoms that overlap with hair loss, how B12 a
 
 ## How Vitamin B12 Affects Your Hair
 
+{{< doodle name="neuron" size="medium" align="right" >}}
+
 Vitamin B12 (cobalamin) is essential for DNA synthesis, neurological function, and red blood cell formation. Because hair follicles are among the most metabolically active tissues in the body, anything that disrupts cell division — including low B12 — can show up in your scalp before it shows up in your bloodwork.
 
 According to the [NIH Office of Dietary Supplements factsheet on vitamin B12](https://pmc.ncbi.nlm.nih.gov/articles/PMC6380979/), B12 deficiency commonly produces hematologic and skin-related changes, and folate deficiency in particular is linked to hair, skin, and nail changes. While B12 isn't a "hair growth vitamin" in the marketing sense, a deficiency starves the follicle of the oxygen-carrying red blood cells it needs to sustain the **anagen (growth) phase**, which lasts 2–7 years per follicle according to [hair biology references](https://www.sciencedirect.com/topics/medicine-and-dentistry/hair-growth). When follicles are pushed prematurely into the telogen (shedding) phase, you get diffuse thinning — often called **telogen effluvium**.
@@ -48,6 +50,7 @@ B12 deficiency rarely arrives alone. If hair loss is the visible symptom, these 
 - **Fatigue and pallor** — often the earliest signs
 - **Tingling or numbness** in hands and feet (peripheral neuropathy)
 - **Glossitis** — a smooth, sore, beefy-red tongue
+{{< doodle name="brain" size="small" >}}
 - **Brain fog, memory lapses, or low mood**
 - **Shortness of breath** with mild exertion
 - **Brittle nails and dry skin** alongside diffuse hair shedding
@@ -76,6 +79,8 @@ When I tested a methylcobalamin sublingual lozenge alongside a standard cyanocob
 
 Below is a structured comparison of options that meet a reasonable bar for purity, dosing, and value. I've included both methyl and cyano forms so you can match the product to your clinical situation.
 
+{{< product name="methylcobalamin-thorne" >}}
+
 ### Option 1 — Sublingual Methylcobalamin (iHerb-stocked brands like Jarrow Formulas or Now Foods)
 
 [Jarrow Formulas Methyl B-12 Sublingual](https://www.iherb.com/search?kw=jarrow&rcode=PFR1152)
@@ -83,6 +88,8 @@ Below is a structured comparison of options that meet a reasonable bar for purit
 **Pros:**
 - Bioactive methylcobalamin — no conversion needed
 - Sublingual delivery bypasses gut absorption issues (useful for PPI users, older adults, post-bariatric patients)
+
+{{< doodle name="droplet-vitamin" size="small" >}}
 - Typically third-party tested
 
 **Cons:**
@@ -123,6 +130,8 @@ Below is a structured comparison of options that meet a reasonable bar for purit
 **Best for:** Patients with broader fatigue, hair shedding, and suspected multiple B-vitamin gaps.
 
 ## How to Use B12 Supplements Sensibly
+
+{{< doodle name="pill-blister" size="medium" align="left" >}}
 
 A few rules I share with patients:
 
