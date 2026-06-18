@@ -1,0 +1,27 @@
+{{- $variant := .variant | default "full" -}}
+{{- with site.Params.author -}}
+  {{- if .realName -}}
+    {{- if eq $variant "compact" -}}
+      <aside class="author-block compact" itemscope itemtype="https://schema.org/Person">
+        <img class="author-block__avatar" src="{{ .avatarPath | relURL }}" width="40" height="40" alt="Avatar of {{ .realName }}">
+        <div class="author-block__text">
+          <div class="author-block__name" itemprop="name">{{ .realName }}</div>
+          <div class="author-block__bio">{{ .bioCompact }}</div>
+        </div>
+      </aside>
+    {{- else -}}
+      <aside class="author-block" itemscope itemtype="https://schema.org/Person">
+        <img class="author-block__avatar" src="{{ .avatarPath | relURL }}" width="80" height="80" alt="Avatar of {{ .realName }}">
+        <div class="author-block__text">
+          <div class="author-block__name" itemprop="name">{{ .realName }}</div>
+          <div class="author-block__role" itemprop="jobTitle">{{ .role }}</div>
+          <div class="author-block__credit" itemprop="affiliation">{{ .credentials }}</div>
+          <p class="author-block__bio" itemprop="description">{{ .bioFull }}</p>
+        </div>
+      </aside>
+    {{- end -}}
+  {{- else -}}
+    {{- /* realName empty — render nothing rather than leak placeholder */ -}}
+    <!-- author_block: realName not set in hugo.toml -->
+  {{- end -}}
+{{- end -}}

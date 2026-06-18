@@ -9,7 +9,6 @@ buildFuture = false
 
 [params]
 description = "Evidence-led supplement, nerve-health, and wellness guides — pharmacist-backed, plain language."
-author = "Welness Jollof"
 defaultTheme = "auto"
 ShowReadingTime = true
 ShowShareButtons = true
@@ -74,6 +73,14 @@ image = "og-image.svg"
 hidden = true
 hiddenInList = true
 hiddenInSingle = true
+
+[params.author]
+realName = "Augustine Usifo"
+role = "Pharmacist · Evidence-led wellness"
+credentials = "Biofem Pharma, Lagos"
+bioFull = "Plain-language, evidence-based health and wellness guides sourced from peer-reviewed literature. No miracle claims, no fluff — just what the evidence actually says."
+bioCompact = "Pharmacist-backed, evidence-led."
+avatarPath = "/img/author-avatar.svg"
 
 [markup.goldmark.renderer]
 unsafe = true
