@@ -320,3 +320,29 @@ footer.footer { border-top: 1px solid var(--border); padding: 32px 0;
   .product-card__image-link { width: 100%; height: 220px; }
   .product-card__image { object-fit: contain; }
 }
+
+/* --- Disclosure + medical-disclaimer doodle prefix -------------------------
+   Adds an icon before the existing blocks defined earlier in this file.
+   Existing background + border-left from lines ~150-170 are preserved.
+   ------------------------------------------------------------------------- */
+.disclosure, .medical-disclaimer { position: relative; padding-left: 56px; }
+.disclosure::before,
+.medical-disclaimer::before {
+  content: ""; position: absolute; left: 16px; top: 18px;
+  width: 28px; height: 28px;
+  background-repeat: no-repeat; background-position: center; background-size: contain;
+}
+.disclosure::before {
+  background-image: url("/doodles/warning-triangle.svg");
+}
+.medical-disclaimer::before {
+  background-image: url("/doodles/lab-coat.svg");
+}
+/* In dark mode, the SVGs (which use currentColor) won't recolour because
+   they're embedded as background-image. Use a filter to push them to the
+   accent-teal. */
+.dark .disclosure::before,
+.dark .medical-disclaimer::before {
+  filter: brightness(0) saturate(100%) invert(63%) sepia(50%)
+          saturate(485%) hue-rotate(127deg) brightness(95%) contrast(90%);
+}
