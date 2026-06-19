@@ -64,8 +64,10 @@ icon = "🔬"
 description = "Spot greenwashing, contamination risks, and dosage games before you buy."
 
 [params.homeInfoParams]
-Title = "Welness Jollof"
-Content = "Evidence-led supplement, nerve-health, and wellness guides — pharmacist-backed, plain language."
+# Hero H1 is a value-prop, NOT the brand name — brand already shows in header + tab title.
+# Avoids the "three Welness Jollof on one screen" duplication audited 2026-06-19.
+Title = "Supplements, decoded by a pharmacist."
+Content = "Evidence-led guides on nerve health, B-vitamins, ALA, and the supplement aisle — plain language, peer-reviewed sources, no miracle claims."
 
 [params.assets]
 disableHLJS = true

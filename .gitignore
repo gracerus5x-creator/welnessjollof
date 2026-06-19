@@ -8,6 +8,10 @@ hugo_stats.json
 # Theme (re-cloned by GH Actions on every build)
 /themes/
 
+# Context-mode + transient tmp
+/tmp/
+.ctx-mode-*
+
 # OS
 .DS_Store
 Thumbs.db
