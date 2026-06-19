@@ -1,11 +1,16 @@
 # Welness Jollof — product registry for the {{< product >}} shortcode.
 #
 # - price_usd / price_verified_at populated via Gate C verification (see MEMORY.md).
-# - image_url populated by Task 6 of the P1 plan after Gate A (ToS) outcome.
-#   Gate A defaulted to Path B (local cache) on 2026-06-18 — see MEMORY.md.
-# - iherb_slug is the short identifier baked into AFFILIATE_LINK_PLACEHOLDER:iherb:<slug>.
-#   config/publish.yaml::affiliate_overrides pins each slug to its full iHerb product
-#   URL with rcode=PFR1152, so the publish-step resolver emits a direct product link.
+# - image_url points at our own brand-teal SVG placeholders.
+#   Changed 2026-06-18: iHerb T&C "Licensed Materials" clause forbids modifying
+#   or hotlinking their product imagery. Path-B-with-local-JPEG approach was
+#   technically non-compliant (we resized). Own-brand SVGs sidestep the issue.
+#   NO leading slash on image_url: Hugo's relURL prepends the /welnessjollof/
+#   subpath only when the path is relative.
+# - iherb_slug retained for the gate test cross-check; the shortcode does NOT
+#   build affiliate URLs from it any more (see commit 37c8c56).
+# - PENDING_AFFILIATE_APPROVAL: until iHerb Affiliate Program approval via
+#   Impact, the CTA links to iherb_canonical_url with NO tracking param.
 #
 # Setting any field to TO_VERIFY causes the shortcode to emit a Hugo warnf
 # and render an empty card so stale data never ships.
@@ -15,7 +20,7 @@ methylcobalamin-thorne:
   dosage: "1 mg, 60 capsules"
   price_usd: 24.00
   price_verified_at: "2026-06-18"
-  image_url: "/img/products/methylcobalamin-thorne.jpg"
+  image_url: "img/products/methylcobalamin-thorne.svg"
   iherb_slug: "thorne-methylcobalamin"
   iherb_canonical_url: "https://www.iherb.com/pr/thorne-vitamin-b12-60-capsules-1-mg-per-capsule/18440"
   badge: "pharmacist pick"
@@ -25,7 +30,7 @@ alpha-lipoic-thorne:
   dosage: "300 mg, 60 capsules"
   price_usd: 41.00
   price_verified_at: "2026-06-18"
-  image_url: "/img/products/alpha-lipoic-thorne.jpg"
+  image_url: "img/products/alpha-lipoic-thorne.svg"
   iherb_slug: "thorne-alpha-lipoic-acid"
   iherb_canonical_url: "https://www.iherb.com/pr/thorne-alpha-lipoic-acid-60-capsules-300-mg-per-capsule/18734"
   badge: "antioxidant"

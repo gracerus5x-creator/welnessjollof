@@ -29,9 +29,8 @@
           <meta itemprop="price" content="{{ printf "%.2f" $p.price_usd }}">
           <span class="product-card__price-note">price approximate — check iHerb (as of {{ $p.price_verified_at }})</span>
         </div>
-        <a class="product-card__cta" href="{{ $href }}" rel="nofollow sponsored noopener" target="_blank">
-          Buy on iHerb →
-        </a>
+        <a class="product-card__cta" href="{{ $href }}" rel="nofollow sponsored noopener" target="_blank"
+           aria-label="Buy {{ $p.name }} on iHerb"><span class="product-card__cta-label">Buy on iHerb &rarr;</span></a>
       </div>
     </aside>
   {{- end -}}
