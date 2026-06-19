@@ -481,11 +481,12 @@ a.product-card__image-link,
   -webkit-line-clamp: unset;
 }
 .first-entry .home-hero-title {
-  font-size: clamp(1.25rem, 1.6vw + 0.7rem, 1.6rem);
-  line-height: 1.4;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  max-width: 60ch;
+  font-size: clamp(1.0rem, 0.7vw + 0.7rem, 1.2rem);
+  line-height: 1.45;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  max-width: 62ch;
+  color: var(--secondary);
 }
 
 /* --- P2 rev 2: Logo icon beside wordmark ---------------------------------- */
