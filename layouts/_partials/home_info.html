@@ -5,13 +5,15 @@
 {{- with site.Params.homeInfoParams }}
 <article class="first-entry home-info">
     {{ partial "home_author_strip.html" . }}
-    <header class="entry-header">
-        <h1>{{ .Title | markdownify }}</h1>
+    <header class="entry-header home-hero-header">
+        <h1 class="home-hero-title">{{ .Title | markdownify }}</h1>
     </header>
+    {{- with .Content -}}
     <div class="entry-content md-content">
         {{ $opts := dict "display" "block" }}
-        {{ .Content | $.Page.RenderString $opts }}
+        {{ . | $.Page.RenderString $opts }}
     </div>
+    {{- end -}}
 
     {{- /* Category cards. Each card's URL should target a Hugo taxonomy term
            page (e.g. /categories/nerve-health/). If the taxonomy term exists

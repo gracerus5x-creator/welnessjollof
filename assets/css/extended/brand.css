@@ -462,6 +462,20 @@ a.product-card__image-link,
   transform: translateY(0);
 }
 
+/* --- P2 rev 3: Home hero — broad value-prop sentence as H1 ----------------
+   New hero is a longer sentence (not a 2-3 word slogan), so the default
+   PaperMod H1 size is too punchy. Tighten size + line-height so it reads
+   as a paragraph-y headline, not a billboard.
+   ------------------------------------------------------------------------- */
+.home-hero-header { margin-bottom: 18px; }
+.home-hero-title {
+  font-size: clamp(1.4rem, 2.4vw + 0.6rem, 1.9rem);
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  max-width: 56ch;
+}
+
 /* --- P2 rev 2: Logo icon beside wordmark ---------------------------------- */
 .logo-link {
   display: inline-flex;
