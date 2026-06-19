@@ -466,14 +466,26 @@ a.product-card__image-link,
    New hero is a longer sentence (not a 2-3 word slogan), so the default
    PaperMod H1 size is too punchy. Tighten size + line-height so it reads
    as a paragraph-y headline, not a billboard.
+
+   Two PaperMod defaults must be overridden:
+   1. `.first-entry .entry-header { -webkit-line-clamp: 3 }` truncates long
+      H1s with an ellipsis after 3 lines. Disabled for home hero.
+   2. `.first-entry .entry-header h1 { font-size: 34px }` wins over our
+      single-class .home-hero-title selector by specificity, so we escalate
+      to .first-entry .home-hero-title.
    ------------------------------------------------------------------------- */
-.home-hero-header { margin-bottom: 18px; }
-.home-hero-title {
-  font-size: clamp(1.4rem, 2.4vw + 0.6rem, 1.9rem);
-  line-height: 1.35;
+.first-entry .home-hero-header {
+  margin-bottom: 18px;
+  overflow: visible;
+  display: block;
+  -webkit-line-clamp: unset;
+}
+.first-entry .home-hero-title {
+  font-size: clamp(1.25rem, 1.6vw + 0.7rem, 1.6rem);
+  line-height: 1.4;
   font-weight: 700;
   letter-spacing: -0.01em;
-  max-width: 56ch;
+  max-width: 60ch;
 }
 
 /* --- P2 rev 2: Logo icon beside wordmark ---------------------------------- */
