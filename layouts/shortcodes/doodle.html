@@ -1,10 +1,7 @@
 {{- $name := .Get "name" -}}
 {{- $size := .Get "size" | default "small" -}}
 {{- $align := .Get "align" | default "inline" -}}
-{{- with resources.Get (printf "doodles/%s.svg" $name) -}}
-  {{- $svg := . | resources.Minify -}}
-  <span class="doodle-inline doodle-inline--{{ $size }} doodle-inline--{{ $align }}"
-        aria-hidden="true">{{ $svg.Content | safeHTML }}</span>
-{{- else -}}
-  {{- warnf "doodle: missing asset assets/doodles/%s.svg" $name -}}
-{{- end -}}
+<svg class="doodle-inline doodle-inline--{{ $size }} doodle-inline--{{ $align }}"
+     aria-hidden="true" focusable="false">
+  <use href="#doodle-{{ $name }}"></use>
+</svg>
