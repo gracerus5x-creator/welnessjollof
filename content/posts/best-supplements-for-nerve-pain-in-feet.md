@@ -4,6 +4,13 @@ date: '2026-06-02T23:55:17Z'
 draft: false
 description: Discover the best supplements for nerve pain in feet. Expert-reviewed
   guide to natural remedies and evidence-based options for neuropathy relief.
+cover:
+  image: og-image.svg
+  alt: Cover
+  relative: false
+  hidden: true
+categories:
+- Nerve Health
 tags:
 - localized-nerve-pain
 - listicle
@@ -20,6 +27,9 @@ naira_engine:
 ---
 
 # Best Supplements for Nerve Pain in Feet: A Pharmacist-Reviewed Guide
+
+> **Affiliate disclosure:** Some links on this page are affiliate links — if you click through and purchase, we may earn a commission at no extra cost to you. We only recommend products we'd use ourselves. [Full disclosure →](/disclosure/)
+
 
 Burning, tingling, numbness, or that "walking on pebbles" sensation in your feet is often peripheral neuropathy — and it affects roughly 1 in 13 adults over 40, according to the [CDC's National Health and Nutrition Examination Survey](https://www.cdc.gov/diabetes/data/statistics-report/index.html). While prescription medications like gabapentin (Neurontin) and duloxetine (Cymbalta) remain first-line for diabetic peripheral neuropathy, several supplements have credible peer-reviewed evidence supporting their use as adjuncts.
 
@@ -87,7 +97,9 @@ Magnesium plays a role in NMDA receptor regulation and nerve excitability. While
 
 Here's a side-by-side comparison of two well-formulated, third-party-tested products covering the highest-evidence ingredients above.
 
-### Option A: [Doctor's Best Alpha-Lipoic Acid 600 mg](AFFILIATE_LINK_PLACEHOLDER:iherb:doctors-best)
+{{< product name="alpha-lipoic-thorne" >}}
+
+### Option A: [Doctor's Best Alpha-Lipoic Acid 600 mg](https://www.iherb.com/search?kw=doctors+best+alpha+lipoic+acid+600)
 
 **Pros**
 - 600 mg dose matches the SYDNEY 2 trial protocol exactly
@@ -104,7 +116,7 @@ Here's a side-by-side comparison of two well-formulated, third-party-tested prod
 
 ---
 
-### Option B: [Nature's Bounty Advanced Nerve Health Complex (B-Complex + ALA)](AFFILIATE_LINK_PLACEHOLDER:amazon:natures-bounty)
+### Option B: [Nature's Bounty Advanced Nerve Health Complex (B-Complex + ALA)](https://www.amazon.com/s?k=natures+bounty+advanced+nerve+health+complex)
 
 **Pros**
 - Combines ALA with methylcobalamin (B12) and benfotiamine in one capsule
@@ -164,19 +176,14 @@ The best supplements for nerve pain in feet aren't mysterious — they're alpha-
 
 Whichever route you choose, give it 2–3 months, track symptoms objectively, and pair supplementation with the real drivers of nerve recovery: tight glucose control, regular walking, and addressing any underlying deficiency.
 
-**Ready to start?** Compare the two options above — [the standalone ALA on iHerb](AFFILIATE_LINK_PLACEHOLDER:iherb:doctors-best) for evidence-matched dosing, or [the combination nerve complex on Amazon](AFFILIATE_LINK_PLACEHOLDER:amazon:natures-bounty) for convenience — and bring the label to your next appointment.
+**Ready to start?** Compare the two options above — [the standalone ALA on iHerb](https://www.iherb.com/search?kw=doctors+best+alpha+lipoic+acid+600) for evidence-matched dosing, or [the combination nerve complex on Amazon](https://www.amazon.com/s?k=natures+bounty+advanced+nerve+health+complex) for convenience — and bring the label to your next appointment.
 
 ---
 
 > This content is for informational purposes only. Consult your healthcare provider before making any changes to your treatment plan.
 
-
-{{< funnel data="best-supplements-for-nerve-pain-in-feet" >}}
-
-<!-- naira-engine-funnel-applied -->
-
 ---
 
-*This post contains affiliate links. See our [affiliate disclosure](/disclosure).*
+*This post contains affiliate links. See our [affiliate disclosure](/disclosure/) for the full statement on how we earn.*
 
 <!-- naira-engine-compliance-applied -->
