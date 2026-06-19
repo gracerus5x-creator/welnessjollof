@@ -1,5 +1,11 @@
 {{- define "main" }}
 
+{{/* P3: Scroll-progress bar. Width set by inline-script reading scrollY.
+     Sits inside the article so it only shows on post pages. */}}
+<div class="scroll-progress" aria-hidden="true">
+  <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
+</div>
+
 <article class="post-single">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
@@ -30,19 +36,28 @@
   </header>
   {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
-  {{- if (.Param "ShowToc") }}
-  {{- partial "toc.html" . }}
-  {{- end }}
 
   {{ partial "author_block.html" (dict "variant" "full") }}
 
-  {{- if .Content }}
-  <div class="post-content md-content">
-    {{- if not (.Param "disableAnchoredHeadings") }}
-    {{- partial "anchored_headings.html" .Content -}}
-    {{- else }}{{ .Content }}{{ end }}
+  {{/* P3: Two-column layout — sticky TOC rail (desktop) + content.
+       On <960px the rail collapses above the content as a normal block. */}}
+  <div class="post-layout">
+    {{- if (.Param "ShowToc") }}
+    <aside class="post-toc-rail" aria-label="Table of contents">
+      {{- partial "toc.html" . }}
+    </aside>
+    {{- end }}
+
+    <div class="post-layout__content">
+      {{- if .Content }}
+      <div class="post-content md-content">
+        {{- if not (.Param "disableAnchoredHeadings") }}
+        {{- partial "anchored_headings.html" .Content -}}
+        {{- else }}{{ .Content }}{{ end }}
+      </div>
+      {{- end }}
+    </div>
   </div>
-  {{- end }}
 
   {{- partial "extend_post_content.html" . }}
 
@@ -65,5 +80,26 @@
   {{- partial "comments.html" . }}
   {{- end }}
 </article>
+
+{{/* P3: Scroll-progress driver. Inlined so no extra HTTP request.
+     Updates a CSS var on the bar as the user scrolls the article. */}}
+<script>
+(function(){
+  var bar = document.getElementById('scroll-progress-bar');
+  if (!bar) return;
+  var ticking = false;
+  function update(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    bar.style.width = pct + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  update();
+})();
+</script>
 
 {{- end }}{{/* end main */}}
