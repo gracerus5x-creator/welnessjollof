@@ -64,9 +64,10 @@ icon = "🔬"
 description = "Spot greenwashing, contamination risks, and dosage games before you buy."
 
 [params.homeInfoParams]
-# Hero H1 is a value-prop, NOT the brand name — brand already shows in header + tab title.
-# Avoids the "three Welness Jollof on one screen" duplication audited 2026-06-19.
-Title = "Supplements, decoded by a pharmacist."
+# Hero H1 is a value-prop, NOT the brand name.
+# "Pharmacist" already lives in the author strip — dropped from H1 + body
+# to avoid repetition across the above-the-fold block (audit 2026-06-19 rev 2).
+Title = "Supplements, decoded."
 Content = "Evidence-led guides on nerve health, B-vitamins, ALA, and the supplement aisle — plain language, peer-reviewed sources, no miracle claims."
 
 [params.assets]

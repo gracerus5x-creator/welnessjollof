@@ -13,18 +13,6 @@
         {{ .Content | $.Page.RenderString $opts }}
     </div>
 
-    {{- /* P2: Symptom-finder teaser. Placeholder card until ≥6 published
-           articles exist across multiple categories — at that point this
-           becomes a real interactive quiz that routes by symptom. */ -}}
-    <aside class="home-symptom-finder" aria-label="Symptom finder (coming soon)">
-      <div class="home-symptom-finder__icon" aria-hidden="true">🧭</div>
-      <div class="home-symptom-finder__body">
-        <p class="home-symptom-finder__title">Symptom finder — pick your concern, get a pharmacist-vetted guide</p>
-        <p class="home-symptom-finder__desc">Tingling feet? Fatigue + brain fog? Hair loss? The finder opens once we've published guides for every major symptom path.</p>
-      </div>
-      <span class="home-symptom-finder__badge">Coming soon</span>
-    </aside>
-
     {{- /* Category cards. Each card's URL should target a Hugo taxonomy term
            page (e.g. /categories/nerve-health/). If the taxonomy term exists
            AND has ≥1 page, render a clickable card. Otherwise render a muted
@@ -57,6 +45,19 @@
         {{ end }}
     </div>
     {{ end }}
+
+    {{- /* P2: Symptom-finder teaser. Placeholder card until ≥6 published
+           articles exist across multiple categories — at that point this
+           becomes a real interactive quiz that routes by symptom.
+           Position: AFTER the category cards (user directive 2026-06-19 rev 2). */ -}}
+    <aside class="home-symptom-finder" aria-label="Symptom finder (coming soon)">
+      <div class="home-symptom-finder__icon" aria-hidden="true">🧭</div>
+      <div class="home-symptom-finder__body">
+        <p class="home-symptom-finder__title">Not sure where to start? Tell us what you're feeling.</p>
+        <p class="home-symptom-finder__desc">Tingling feet, fatigue, brain fog, hair loss — pick your symptom and we'll route you to the right guide. Opens once we've covered every major symptom path.</p>
+      </div>
+      <span class="home-symptom-finder__badge">Coming soon</span>
+    </aside>
 
     <footer class="entry-footer">
         {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}

@@ -1,13 +1,19 @@
-{{- /* Welness Jollof override of PaperMod's header.html (2026-06-19).
-       Removes the duplicate logo image (text label "Welness Jollof" is enough)
-       and moves the theme toggle out of the logo block to the far right of
-       the nav so it sits cleanly after the menu items. */ -}}
+{{- /* Welness Jollof override of PaperMod's header.html (2026-06-19, rev 2).
+       Renders ONE combined unit: logo icon + "Welness Jollof" wordmark inside
+       a single <a>. The earlier rev dropped the icon entirely; user audit
+       2026-06-19 asked for it back beside the wordmark.
+       Theme toggle stays in .header-actions far-right after the menu. */ -}}
 <header class="header">
     <nav class="header-nav">
         <div class="logo">
             {{- $label_text := (site.Params.label.text | default site.Title) }}
+            {{- $label_icon := (site.Params.label.icon | default "") }}
+            {{- $icon_height := (site.Params.label.iconHeight | default 32) }}
             {{- if site.Title }}
-            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
+            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)" class="logo-link">
+                {{- if $label_icon -}}
+                <img src="{{ $label_icon | relURL }}" alt="" aria-hidden="true" height="{{ $icon_height }}" class="logo-mark">
+                {{- end -}}
                 <strong>{{- $label_text -}}</strong>
             </a>
             {{- end }}

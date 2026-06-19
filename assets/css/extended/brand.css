@@ -462,6 +462,24 @@ a.product-card__image-link,
   transform: translateY(0);
 }
 
+/* --- P2 rev 2: Logo icon beside wordmark ---------------------------------- */
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+}
+.logo-mark {
+  height: 32px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+@media (max-width: 480px) {
+  .logo-mark { height: 28px; }
+  .logo-link { gap: 8px; }
+}
+
 /* --- P2: Symptom-finder teaser card (placeholder until 6+ articles) ------- */
 .home-symptom-finder {
   margin: 32px 0;

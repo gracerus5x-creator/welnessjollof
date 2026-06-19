@@ -19,7 +19,12 @@
     <div class="home-author-strip__name" itemprop="name">{{ .realName }}</div>
     <div class="home-author-strip__role" itemprop="jobTitle">{{ .role }}</div>
   </div>
-  <a class="home-author-strip__link" href="{{ "/about/" | relURL }}" aria-label="Read about {{ .realName }}">
+  {{- /* NOTE: no leading slash on the path — relURL on a project-pages
+         baseURL (https://user.github.io/welnessjollof/) strips the subpath
+         prefix when the input begins with "/", producing a 404. Same bug
+         pattern caught earlier with avatar/logo/og-image. Keep it as
+         "about/" (no leading slash). */ -}}
+  <a class="home-author-strip__link" href="{{ "about/" | relURL }}" aria-label="Read about {{ .realName }}">
     About&nbsp;&rarr;
   </a>
 </aside>
