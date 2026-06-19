@@ -12,16 +12,35 @@
         {{ .Content | $.Page.RenderString $opts }}
     </div>
 
+    {{- /* Category cards. Each card's URL should target a Hugo taxonomy term
+           page (e.g. /categories/nerve-health/). If the taxonomy term exists
+           AND has ≥1 page, render a clickable card. Otherwise render a muted
+           "Coming soon" card that does NOT 404 readers into an empty list. */ -}}
     {{ with site.Params.homeCategories }}
     <div class="home-categories" role="list">
         {{ range . }}
-        <a class="home-category-card" href="{{ .url | absURL }}" role="listitem">
+        {{- $catName := .category | default .title -}}
+        {{- $term := site.GetPage (printf "categories/%s" ($catName | urlize)) -}}
+        {{- $hasPages := and $term (gt (len $term.Pages) 0) -}}
+        {{- if $hasPages -}}
+        <a class="home-category-card" href="{{ $term.RelPermalink }}" role="listitem">
             <div class="home-category-icon">{{ .icon | safeHTML }}</div>
             <div class="home-category-body">
                 <h3 class="home-category-title">{{ .title }}</h3>
                 <p class="home-category-desc">{{ .description }}</p>
+                <p class="home-category-count">{{ len $term.Pages }} article{{ if ne (len $term.Pages) 1 }}s{{ end }}</p>
             </div>
         </a>
+        {{- else -}}
+        <div class="home-category-card home-category-card--soon" role="listitem" aria-disabled="true">
+            <div class="home-category-icon">{{ .icon | safeHTML }}</div>
+            <div class="home-category-body">
+                <h3 class="home-category-title">{{ .title }}</h3>
+                <p class="home-category-desc">{{ .description }}</p>
+                <p class="home-category-count">Coming soon</p>
+            </div>
+        </div>
+        {{- end -}}
         {{ end }}
     </div>
     {{ end }}

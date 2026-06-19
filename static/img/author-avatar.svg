@@ -1,24 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="currentColor" role="img" aria-label="Pharmacist avatar">
-  <!-- Head -->
-  <circle cx="120" cy="72" r="36"/>
-  <!-- Neck -->
-  <rect x="108" y="104" width="24" height="20" rx="4"/>
-  <!-- Lab coat body -->
-  <path d="M60 240 L60 148 C60 132 74 124 90 120 L108 116 L108 140 L120 152 L132 140 L132 116 L150 120 C166 124 180 132 180 148 L180 240 Z"/>
-  <!-- Lab coat lapels (white split at top) -->
-  <path d="M108 116 L120 136 L132 116 L120 110 Z" fill="white" opacity="0.2"/>
-  <!-- Left collar -->
-  <path d="M90 120 L108 116 L108 130 L94 134 Z" fill="white" opacity="0.15"/>
-  <!-- Right collar -->
-  <path d="M150 120 L132 116 L132 130 L146 134 Z" fill="white" opacity="0.15"/>
-  <!-- Stethoscope arc -->
-  <path d="M96 138 C84 142 78 154 80 166 C82 178 92 184 100 180" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-  <!-- Stethoscope head (diaphragm) -->
-  <circle cx="100" cy="181" r="7" fill="white" opacity="0.3"/>
-  <circle cx="100" cy="181" r="4"/>
-  <!-- Pocket on left breast -->
-  <rect x="88" y="152" width="28" height="20" rx="3" fill="white" opacity="0.15"/>
-  <!-- Pen in pocket -->
-  <rect x="96" y="148" width="4" height="16" rx="2" fill="white" opacity="0.4"/>
-  <rect x="103" y="148" width="4" height="14" rx="2" fill="white" opacity="0.3"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="Augustine Usifo">
+  <defs>
+    <linearGradient id="avBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#065F5C"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="80" fill="url(#avBg)"/>
+  <circle cx="80" cy="80" r="73" fill="none" stroke="#CCFBF1" stroke-width="2" opacity="0.4"/>
+  <text x="80" y="106" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif"
+        font-weight="800" font-size="68"
+        fill="#FFFFFF" letter-spacing="-1">AU</text>
 </svg>

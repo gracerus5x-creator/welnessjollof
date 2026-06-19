@@ -9,6 +9,8 @@ cover:
   alt: Cover
   relative: false
   hidden: true
+categories:
+- Nerve Health
 tags:
 - ala-neuropathy
 - guide

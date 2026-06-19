@@ -9,6 +9,8 @@ cover:
   alt: Cover
   relative: false
   hidden: true
+categories:
+- Nerve Health
 tags:
 - b12-symptoms
 - guide

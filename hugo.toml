@@ -29,33 +29,38 @@ disableScrollToTop = false
 googleAnalytics = ""
 cloudflareAnalyticsToken = ""
 
-# Home category cards (shown under the hero on /)
+# Hugo taxonomies — drives /categories/<slug>/ index pages
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Home category cards (shown under the hero on /).
+# Each card's `category` value maps to the article frontmatter `categories:`
+# entry. The home_info partial looks up the matching Hugo taxonomy term and
+# only renders a clickable card when ≥1 article uses that category — else
+# renders a muted "Coming soon" tile to avoid dumping readers on an empty list.
 [[params.homeCategories]]
 title = "Nerve Health"
+category = "Nerve Health"
 icon = "🧠"
-url = "posts/"
-# Original: url = "/categories/nerve-health/"
 description = "B-vitamins, ALA, supplement evidence for neuropathy — translated for normals."
 
 [[params.homeCategories]]
 title = "Supplements 101"
+category = "Supplements 101"
 icon = "💊"
-url = "posts/"
-# Original: url = "/categories/supplements/"
 description = "What works, what's marketing, what to avoid. Peer-reviewed sources only."
 
 [[params.homeCategories]]
 title = "Longevity & Metabolism"
+category = "Longevity & Metabolism"
 icon = "🌱"
-url = "posts/"
-# Original: url = "/categories/longevity/"
 description = "Vitamin D, omega-3, methylated Bs, sleep, glucose — the evidence-backed basics."
 
 [[params.homeCategories]]
 title = "How to Read a Supplement Label"
+category = "How to Read a Supplement Label"
 icon = "🔬"
-url = "posts/"
-# Original: url = "/categories/practical/"
 description = "Spot greenwashing, contamination risks, and dosage games before you buy."
 
 [params.homeInfoParams]
@@ -87,7 +92,7 @@ role = "Pharmacist · Evidence-led wellness"
 credentials = "Biofem Pharma, Lagos"
 bioFull = "Plain-language, evidence-based health and wellness guides sourced from peer-reviewed literature. No miracle claims, no fluff — just what the evidence actually says."
 bioCompact = "Pharmacist-backed, evidence-led."
-avatarPath = "/img/author-avatar.svg"
+avatarPath = "img/author-avatar.svg"
 
 [markup.goldmark.renderer]
 unsafe = true
