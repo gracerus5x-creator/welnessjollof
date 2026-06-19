@@ -1,0 +1,27 @@
+{{- /*
+  home_author_strip.html — slim credibility bar rendered ABOVE the home hero.
+
+  Shows: avatar + realName + role-only credential line.
+  Employer/credentials field is intentionally OMITTED (user directive 2026-06-19).
+  Full credentials live on /about/ and article-footer author_block.
+*/ -}}
+{{- with site.Params.author -}}
+  {{- if .realName -}}
+<aside class="home-author-strip" itemscope itemtype="https://schema.org/Person" aria-label="About the author">
+  <img
+    class="home-author-strip__avatar"
+    src="{{ .avatarPath | relURL }}"
+    width="56" height="56"
+    alt="Avatar of {{ .realName }}"
+    loading="eager"
+    decoding="async">
+  <div class="home-author-strip__text">
+    <div class="home-author-strip__name" itemprop="name">{{ .realName }}</div>
+    <div class="home-author-strip__role" itemprop="jobTitle">{{ .role }}</div>
+  </div>
+  <a class="home-author-strip__link" href="{{ "/about/" | relURL }}" aria-label="Read about {{ .realName }}">
+    About&nbsp;&rarr;
+  </a>
+</aside>
+  {{- end -}}
+{{- end -}}

@@ -4,6 +4,7 @@
 */ -}}
 {{- with site.Params.homeInfoParams }}
 <article class="first-entry home-info">
+    {{ partial "home_author_strip.html" . }}
     <header class="entry-header">
         <h1>{{ .Title | markdownify }}</h1>
     </header>
@@ -11,6 +12,18 @@
         {{ $opts := dict "display" "block" }}
         {{ .Content | $.Page.RenderString $opts }}
     </div>
+
+    {{- /* P2: Symptom-finder teaser. Placeholder card until ≥6 published
+           articles exist across multiple categories — at that point this
+           becomes a real interactive quiz that routes by symptom. */ -}}
+    <aside class="home-symptom-finder" aria-label="Symptom finder (coming soon)">
+      <div class="home-symptom-finder__icon" aria-hidden="true">🧭</div>
+      <div class="home-symptom-finder__body">
+        <p class="home-symptom-finder__title">Symptom finder — pick your concern, get a pharmacist-vetted guide</p>
+        <p class="home-symptom-finder__desc">Tingling feet? Fatigue + brain fog? Hair loss? The finder opens once we've published guides for every major symptom path.</p>
+      </div>
+      <span class="home-symptom-finder__badge">Coming soon</span>
+    </aside>
 
     {{- /* Category cards. Each card's URL should target a Hugo taxonomy term
            page (e.g. /categories/nerve-health/). If the taxonomy term exists

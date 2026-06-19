@@ -387,3 +387,124 @@ a.product-card__image-link,
   filter: brightness(0) saturate(100%) invert(63%) sepia(50%)
           saturate(485%) hue-rotate(127deg) brightness(95%) contrast(90%);
 }
+
+/* --- P2: Home-page author credibility strip --------------------------------
+   Slim horizontal bar above the hero H1. E-E-A-T signal above the fold.
+   Role-only credential — no employer (user directive 2026-06-19).
+   ------------------------------------------------------------------------- */
+.home-author-strip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  margin: 0 0 24px 0;
+  background: var(--code-bg, #f1f5f4);
+  border: 1px solid var(--border, rgba(0,0,0,0.08));
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  max-width: 640px;
+}
+.home-author-strip__avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--primary);
+}
+.home-author-strip__text {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.home-author-strip__name {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--content);
+}
+.home-author-strip__role {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  margin-top: 2px;
+}
+.home-author-strip__link {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--primary);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.home-author-strip__link:hover {
+  background: var(--primary);
+  color: #ffffff;
+  text-decoration: none;
+}
+@media (max-width: 480px) {
+  .home-author-strip { gap: 10px; padding: 10px 12px; }
+  .home-author-strip__avatar { width: 44px; height: 44px; }
+  .home-author-strip__link { padding: 5px 10px; font-size: 0.8rem; }
+}
+
+/* --- P2: Topic-card hover lift + tap feedback ----------------------------- */
+.home-category-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.home-category-card:not(.home-category-card--soon):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary);
+}
+.home-category-card:not(.home-category-card--soon):active {
+  transform: translateY(0);
+}
+
+/* --- P2: Symptom-finder teaser card (placeholder until 6+ articles) ------- */
+.home-symptom-finder {
+  margin: 32px 0;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #f0f9f7 0%, #e6f4f0 100%);
+  border: 1px dashed var(--primary);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.home-symptom-finder__icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.home-symptom-finder__body { flex: 1 1 auto; }
+.home-symptom-finder__title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--content);
+  margin: 0 0 4px 0;
+}
+.home-symptom-finder__desc {
+  font-size: 0.9rem;
+  color: var(--secondary);
+  margin: 0;
+}
+.home-symptom-finder__badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--primary);
+  padding: 4px 8px;
+  border: 1px solid var(--primary);
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.dark .home-symptom-finder {
+  background: linear-gradient(135deg, rgba(31,168,131,0.10) 0%, rgba(31,168,131,0.05) 100%);
+}
+@media (max-width: 480px) {
+  .home-symptom-finder { padding: 18px 16px; gap: 14px; flex-wrap: wrap; }
+  .home-symptom-finder__badge { order: 2; }
+}
