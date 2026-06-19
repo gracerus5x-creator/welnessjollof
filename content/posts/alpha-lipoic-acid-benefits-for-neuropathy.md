@@ -35,11 +35,7 @@ Here's what ALA can and cannot do, how it compares to prescription options, and 
 
 ## What Is Alpha-Lipoic Acid?
 
-{{< doodle name="leaf" size="small" >}}
-
 Alpha-lipoic acid is a naturally occurring antioxidant produced in small amounts by the body and found in foods like spinach, broccoli, and organ meats. It's unique because it's both water- and fat-soluble, allowing it to work across cell membranes and recycle other antioxidants like vitamins C and E.
-
-{{< doodle name="neuron" size="medium" align="right" >}}
 
 For neuropathy specifically, researchers have studied ALA because oxidative stress and mitochondrial dysfunction are believed to play a major role in nerve damage — particularly in diabetic peripheral neuropathy (DPN). According to the [NIH bookshelf monograph](https://www.ncbi.nlm.nih.gov/books/NBK564301/), ALA is investigated as a supplement for chronic diseases characterized by oxidative stress, with diabetic neuropathy being the most studied indication.
 
@@ -93,7 +89,7 @@ Below is a head-to-head of two formulations frequently asked about at the pharma
 
 {{< product name="alpha-lipoic-thorne" >}}
 
-### Option 1: [Doctor's Best Alpha-Lipoic Acid 600 mg](https://www.iherb.com/search?kw=doctors-best&rcode=PFR1152)
+### Option 1: [Doctor's Best Alpha-Lipoic Acid 600 mg](https://www.iherb.com/search?kw=doctors-best)
 
 **Pros:**
 - Hits the 600 mg dose used in most clinical trials

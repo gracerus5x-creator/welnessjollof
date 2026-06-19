@@ -17,10 +17,13 @@ ShowCodeCopyButtons = true
 ShowToc = true
 ShowBreadCrumbs = true
 disableScrollToTop = false
-# iHerb affiliate code — non-secret, designed to appear in product URLs.
-# Used by the {{< product >}} shortcode to build canonical iHerb URLs at build
-# time (GH Pages does not run the pipeline's affiliate_resolver).
-iherb_rcode = "PFR1152"
+# DEPRECATED 2026-06-18 — PENDING_AFFILIATE_APPROVAL.
+# PFR1152 is unverified as an actual iHerb Affiliate-Program code (per audit,
+# Augustine's personal code is a Rewards code, which does NOT earn commission
+# on a website per iHerb T&C). Until iHerb Affiliate Program approval via
+# Impact, the {{< product >}} shortcode ignores this value and emits canonical
+# iHerb URLs with NO tracking parameter. See MEMORY.md BLOCKER entries.
+# iherb_rcode = "PFR1152"
 
 # Analytics — leave blank until you have the IDs; the partial gracefully no-ops.
 googleAnalytics = ""

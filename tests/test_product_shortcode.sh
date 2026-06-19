@@ -28,15 +28,16 @@ fi
 if ! grep -q 'price approximate — check iHerb' "$PAGE"; then
   echo "FAIL: price-approximate note missing"; exit 1
 fi
-# Behaviour change (commit 59e0b8a): GH Pages runs Hugo only, never the
-# pipeline affiliate_resolver. So the shortcode builds the canonical iHerb
-# URL at Hugo build time from iherb_canonical_url + iherb_rcode. The
-# AFFILIATE_LINK_PLACEHOLDER pattern must NOT appear in rendered HTML.
+# PENDING_AFFILIATE_APPROVAL (2026-06-18): the previously-shipped rcode=PFR1152
+# was stripped because it is an unverified Rewards code, NOT an Affiliate code
+# (iHerb T&C forbids Rewards-code commission attribution on websites).
+# Until Impact approval lands, the shortcode emits canonical iHerb URLs with
+# NO tracking parameter — clicks function, no commission earns.
 if ! grep -q 'iherb.com/pr/thorne-alpha-lipoic-acid' "$PAGE"; then
   echo "FAIL: canonical iHerb URL missing — shortcode failed to resolve iherb_canonical_url"; exit 1
 fi
-if ! grep -q 'rcode=PFR1152' "$PAGE"; then
-  echo "FAIL: affiliate rcode not appended — hugo.toml iherb_rcode missing or shortcode broken"; exit 1
+if grep -q 'rcode=PFR1152' "$PAGE"; then
+  echo "FAIL: rcode=PFR1152 leaked into HTML — must stay absent until Impact approval"; exit 1
 fi
 if grep -q 'AFFILIATE_LINK_PLACEHOLDER' "$PAGE"; then
   echo "FAIL: placeholder leaked into rendered HTML — shortcode regression"; exit 1
