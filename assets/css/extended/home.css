@@ -125,6 +125,7 @@
 .wj-news__input { flex: 1; border: 0; border-radius: 12px; padding: 13px 16px; font-family: var(--font-sans); color: #1F2937; background: rgba(255,255,255,.96); }
 .wj-news__btn { font-family: var(--font-sans); font-weight: 600; color: var(--primary); background: #fff; border: 0; padding: 13px 24px; border-radius: 12px; cursor: pointer; transition: background .15s ease; }
 .wj-news__btn:hover { background: var(--primary-50); }
+.wj-news__ok { color: #fff; font-family: var(--font-sans); font-weight: 600; margin: 22px auto 0; max-width: 36em; }
 
 @media (prefers-reduced-motion: reduce) { .wj-btn, .wj-track, .wj-card, .wj-featured, .wj-track__link { transition: none; } }
 @media (max-width: 900px) {

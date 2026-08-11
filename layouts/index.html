@@ -120,10 +120,30 @@
       <p class="wj-eyebrow wj-eyebrow--light">Own your health knowledge</p>
       <h2 class="wj-news__title">One evidence-led tip a week.</h2>
       <p class="wj-news__sub">Plain-language health you can use — no spam, no fear-mongering. Unsubscribe anytime.</p>
-      <form class="wj-news__form" onsubmit="return false" aria-label="Newsletter signup">
-        <input type="email" required placeholder="you@email.com" aria-label="Email address" class="wj-news__input">
+      <form class="wj-news__form" id="wj-news-form"
+            action="https://assets.mailerlite.com/jsonp/2570226/forms/195533801293612050/subscribe"
+            method="post" target="_blank" aria-label="Newsletter signup">
+        <input type="email" name="fields[email]" required placeholder="you@email.com" aria-label="Email address" class="wj-news__input" autocomplete="email">
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
         <button class="wj-news__btn" type="submit">Subscribe</button>
       </form>
+      <p class="wj-news__ok" id="wj-news-ok" hidden>Almost there — check your inbox to confirm your subscription. ✉️</p>
+      <script>
+        (function () {
+          var f = document.getElementById('wj-news-form');
+          if (!f) return;
+          f.addEventListener('submit', function (e) {
+            e.preventDefault();
+            fetch(f.action, { method: 'POST', body: new FormData(f), mode: 'no-cors' })
+              .finally(function () {
+                f.hidden = true;
+                var ok = document.getElementById('wj-news-ok');
+                if (ok) ok.hidden = false;
+              });
+          });
+        })();
+      </script>
     </div>
   </section>
 
