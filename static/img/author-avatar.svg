@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="Augustine Usifo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="Pharmacist-reviewed">
   <defs>
     <linearGradient id="avBg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#0F766E"/>
@@ -8,8 +8,6 @@
   </defs>
   <circle cx="80" cy="80" r="80" fill="url(#avBg)"/>
   <circle cx="80" cy="80" r="73" fill="none" stroke="#CCFBF1" stroke-width="2" opacity="0.4"/>
-  <text x="80" y="106" text-anchor="middle"
-        font-family="Inter, system-ui, sans-serif"
-        font-weight="800" font-size="68"
-        fill="#FFFFFF" letter-spacing="-1">AU</text>
+  <path d="M52 82 l18 18 l38 -40" fill="none" stroke="#FFFFFF"
+        stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

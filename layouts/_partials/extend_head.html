@@ -25,10 +25,14 @@
   "image": [{{ with site.Params.assets.ogImage }}{{ (printf "%s%s" site.BaseURL .) | jsonify }}{{ else }}{{ (printf "%sog-image.svg" site.BaseURL) | jsonify }}{{ end }}],
   "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
   "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  {{/* Name-off (2026-08-11): author is the BRAND, not the person. The prior
+       `site.Params.author | jsonify` dumped the whole author map — leaking
+       realName AND the Biofem employer credential into every article's JSON-LD.
+       The named pharmacist reviewer lives on /about/. */}}
   "author": {
     "@type": "Organization",
-    "name": {{ site.Params.author | jsonify }},
-    "url": {{ site.BaseURL | jsonify }}
+    "name": {{ site.Title | jsonify }},
+    "url": {{ (printf "%sabout/" site.BaseURL) | jsonify }}
   },
   "publisher": {
     "@type": "Organization",

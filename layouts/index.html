@@ -1,0 +1,131 @@
+{{- /*
+  Custom editorial home (2026-08-11) — ports design/welnessjollof-home prototype
+  into Hugo. Full-bleed magazine layout: two-column hero + pharmacist-reviewed
+  seal, trust band, two-track split, featured lead, latest-guides grid, and the
+  newsletter band. Header + footer come from the theme. Name-off honoured
+  (reviewer is role-only; full name lives on /about/).
+*/ -}}
+{{- define "main" -}}
+{{- $posts := (where site.RegularPages "Section" "posts").ByDate.Reverse -}}
+{{- $featured := "" -}}{{- if gt (len $posts) 0 }}{{ $featured = index $posts 0 }}{{ end -}}
+{{- $grid := (after 1 $posts) | first 3 -}}
+<div class="wj-home">
+
+  <!-- ===== HERO ===== -->
+  <section class="wj-band wj-hero">
+    <div class="wj-wrap wj-hero-grid">
+      <div class="wj-hero-copy">
+        <p class="wj-eyebrow">Pharmacist-reviewed · Evidence-led · Plain language</p>
+        <h1 class="wj-hero-title">Health advice you can <span class="wj-accent">actually trust.</span></h1>
+        <p class="wj-hero-sub">Guides on supplements, nutrition, and everyday Nigerian health — pharmacist-written, fact-checked, and traced to the research. No hype. No miracle cures.</p>
+        <a href="{{ "about/" | relURL }}" class="wj-reviewer">
+          <span class="wj-reviewer__mark" aria-hidden="true">✓</span>
+          <span class="wj-reviewer__text">
+            <span class="wj-reviewer__name">Reviewed by a licensed pharmacist</span>
+            <span class="wj-reviewer__role">Evidence-led · About the reviewer →</span>
+          </span>
+        </a>
+        <div class="wj-hero-cta">
+          <a class="wj-btn wj-btn--primary" href="{{ "posts/" | relURL }}">Read the latest guides <span aria-hidden="true">→</span></a>
+          <a class="wj-btn wj-btn--accent" href="{{ "categories/family-health/" | relURL }}">🏠 Free Lassa home-check</a>
+        </div>
+      </div>
+      <div class="wj-hero-seal-wrap">
+        <div class="wj-howcard">
+          <div class="wj-evrule"><span class="wj-eyebrow">How we work</span></div>
+          <ul class="wj-howlist">
+            <li><span class="wj-check">✓</span><span><b>Traced to a source.</b> Every claim links to WHO, NCDC, or peer-reviewed research.</span></li>
+            <li><span class="wj-check">✓</span><span><b>Checked by a pharmacist.</b> Written by someone who reads the label for a living.</span></li>
+            <li><span class="wj-check">✓</span><span><b>No fear, no fluff.</b> Plain language, honest limits, never a miracle claim.</span></li>
+          </ul>
+          <div class="wj-seal" aria-hidden="true"><span>PHARMACIST<br>REVIEWED</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAND ===== -->
+  <section class="wj-band wj-trust">
+    <div class="wj-wrap wj-trust-inner">
+      <span class="wj-trust-label">Every claim traced to a source</span>
+      <span class="wj-trust-pills">
+        <span>WHO</span><span>NCDC</span><span>PubMed</span><span>Cochrane</span><span>NAFDAC</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- ===== TWO-TRACK SPLIT ===== -->
+  <section class="wj-wrap wj-section">
+    <div class="wj-evrule"><span class="wj-eyebrow">Two ways we help</span></div>
+    <div class="wj-twotrack">
+      <article class="wj-track wj-track--teal">
+        <span class="wj-track__kicker wj-track__kicker--teal">Global · Supplements</span>
+        <h2 class="wj-track__title">Supplements, decoded</h2>
+        <p class="wj-track__desc">What actually works, what's just marketing, and what to avoid — nerve health, B-vitamins, longevity, and how to read a label without getting played.</p>
+        <a class="wj-track__link wj-track__link--teal" href="{{ "posts/" | relURL }}">Browse supplement guides <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="wj-track wj-track--amber">
+        <span class="wj-track__kicker wj-track__kicker--amber">Nigeria · Family Health</span>
+        <h2 class="wj-track__title">Family health, protected</h2>
+        <p class="wj-track__desc">Nigeria's real threats — Lassa fever, malaria, and the silent killers in your 20s and 30s. Spot them early, protect your home, act fast.</p>
+        <a class="wj-track__link wj-track__link--amber" href="{{ "categories/family-health/" | relURL }}">Get the survival guides <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </section>
+
+  {{- with $featured }}
+  <!-- ===== FEATURED LEAD ===== -->
+  {{- $fcat := "" }}{{ with .Params.categories }}{{ $fcat = index . 0 }}{{ end }}
+  <section class="wj-wrap wj-section wj-section--tight">
+    <div class="wj-evrule"><span class="wj-eyebrow">This week's guide</span></div>
+    <a class="wj-featured" href="{{ .RelPermalink }}">
+      <div class="wj-featured__thumb {{ if eq $fcat "Family Health" }}wj-thumb--amber{{ else }}wj-thumb--teal{{ end }}">
+        <span class="wj-thumb__tag">{{ with $fcat }}{{ . }}{{ else }}Guide{{ end }}</span>
+      </div>
+      <div class="wj-featured__body">
+        <h2 class="wj-featured__title">{{ .Title }}</h2>
+        <p class="wj-featured__excerpt">{{ .Summary | plainify | truncate 220 }}</p>
+        <span class="wj-btn wj-btn--primary wj-btn--sm">Read the guide <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+  </section>
+  {{- end }}
+
+  {{- with $grid }}
+  <!-- ===== LATEST GUIDES GRID ===== -->
+  <section class="wj-wrap wj-section">
+    <div class="wj-evrule"><span class="wj-eyebrow">Latest guides</span></div>
+    <div class="wj-guides">
+      {{- range . }}
+      {{- $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
+      {{- $src := .Params.sources | default $cat }}
+      <a class="wj-card" href="{{ .RelPermalink }}">
+        <div class="wj-card__thumb {{ if eq $cat "Family Health" }}wj-thumb--amber{{ else }}wj-thumb--teal{{ end }}">
+          <span class="wj-thumb__tag">{{ with $cat }}{{ . }}{{ else }}Guide{{ end }}</span>
+        </div>
+        <div class="wj-card__body">
+          <h3 class="wj-card__title">{{ .Title }}</h3>
+          <p class="wj-card__excerpt">{{ .Summary | plainify | truncate 120 }}</p>
+          {{- with $src }}<div class="wj-card__foot"><span class="wj-sourced">Sourced: {{ . }}</span></div>{{ end }}
+        </div>
+      </a>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="wj-wrap wj-section">
+    <div class="wj-news">
+      <p class="wj-eyebrow wj-eyebrow--light">Own your health knowledge</p>
+      <h2 class="wj-news__title">One evidence-led tip a week.</h2>
+      <p class="wj-news__sub">Plain-language health you can use — no spam, no fear-mongering. Unsubscribe anytime.</p>
+      <form class="wj-news__form" onsubmit="return false" aria-label="Newsletter signup">
+        <input type="email" required placeholder="you@email.com" aria-label="Email address" class="wj-news__input">
+        <button class="wj-news__btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+</div>
+{{- end -}}

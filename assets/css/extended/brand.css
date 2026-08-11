@@ -642,3 +642,61 @@ a.product-card__image-link,
   .home-symptom-finder { padding: 18px 16px; gap: 14px; flex-wrap: wrap; }
   .home-symptom-finder__badge { order: 2; }
 }
+
+/* --- Editorial home hero (2026-08-11 prototype port) ----------------------
+   Appended last so the big-thesis title wins the cascade over the earlier
+   small `.first-entry .home-hero-title` rule (equal specificity, later wins). */
+.home-hero-eyebrow {
+  font-family: var(--font-sans); text-transform: uppercase;
+  letter-spacing: 0.14em; font-size: 0.74rem; font-weight: 700;
+  color: var(--primary); margin: 0 0 14px 0;
+}
+.first-entry .home-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.05; font-weight: 800; letter-spacing: -0.02em;
+  color: var(--content); max-width: 18ch; margin: 0 0 18px 0;
+}
+.home-hero-subhead {
+  font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.6;
+  color: var(--muted); max-width: 46ch; margin: 0; font-style: normal;
+}
+.home-hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 6px 0; }
+.hero-btn {
+  font-family: var(--font-sans); font-weight: 600; font-size: 0.98rem;
+  padding: 13px 22px; border-radius: 12px; display: inline-flex;
+  align-items: center; gap: 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.hero-btn--primary {
+  background: var(--primary); color: #fff;
+  box-shadow: 0 6px 18px -6px rgba(15,118,110,0.5);
+}
+.hero-btn--primary:hover { background: var(--secondary); transform: translateY(-2px); }
+.hero-btn--accent {
+  background: var(--primary-50); color: var(--secondary);
+  border: 1px solid var(--primary-100);
+}
+.hero-btn--accent:hover { background: var(--primary-100); transform: translateY(-2px); }
+.hero-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.home-trust-band {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px;
+  margin: 30px 0 6px 0; padding: 16px 0;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.home-trust-band__label {
+  font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+}
+.home-trust-band__pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.home-trust-band__pills span {
+  font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600;
+  color: var(--secondary); background: var(--primary-50);
+  border: 1px solid var(--primary-100); padding: 5px 12px; border-radius: 999px;
+}
+@media (prefers-reduced-motion: reduce) { .hero-btn { transition: none; } }
+@media (max-width: 768px) {
+  .home-hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-btn { justify-content: center; }
+  .home-hero-subhead { font-size: 1.08rem; }
+}

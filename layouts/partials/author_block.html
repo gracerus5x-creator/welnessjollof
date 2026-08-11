@@ -1,27 +1,26 @@
+{{- /* Name-off (2026-08-11 owner directive): article-facing author blocks are
+       ROLE-ONLY. No realName and no employer credential (Biofem) on these
+       always-visible surfaces — both live on / are owned by the /about/ page.
+       This is the reviewer credit at the foot of every article. */ -}}
 {{- $variant := .variant | default "full" -}}
 {{- with site.Params.author -}}
-  {{- if .realName -}}
     {{- if eq $variant "compact" -}}
-      <aside class="author-block compact" itemscope itemtype="https://schema.org/Person">
-        <img class="author-block__avatar" src="{{ .avatarPath | relURL }}" width="40" height="40" alt="Avatar of {{ .realName }}">
+      <aside class="author-block compact">
+        <img class="author-block__avatar" src="{{ .avatarPath | relURL }}" width="40" height="40" alt="Pharmacist-reviewed">
         <div class="author-block__text">
-          <div class="author-block__name" itemprop="name">{{ .realName }}</div>
+          <div class="author-block__name">Reviewed by a licensed pharmacist</div>
           <div class="author-block__bio">{{ .bioCompact }}</div>
         </div>
       </aside>
     {{- else -}}
-      <aside class="author-block" itemscope itemtype="https://schema.org/Person">
-        <img class="author-block__avatar" src="{{ .avatarPath | relURL }}" width="80" height="80" alt="Avatar of {{ .realName }}">
+      <aside class="author-block">
+        <img class="author-block__avatar" src="{{ .avatarPath | relURL }}" width="80" height="80" alt="Pharmacist-reviewed">
         <div class="author-block__text">
-          <div class="author-block__name" itemprop="name">{{ .realName }}</div>
-          <div class="author-block__role" itemprop="jobTitle">{{ .role }}</div>
-          <div class="author-block__credit" itemprop="affiliation">{{ .credentials }}</div>
-          <p class="author-block__bio" itemprop="description">{{ .bioFull }}</p>
+          <div class="author-block__name">Reviewed by a licensed pharmacist</div>
+          <div class="author-block__role">{{ .role }}</div>
+          <p class="author-block__bio">{{ .bioFull }}</p>
+          <a class="author-block__link" href="{{ "about/" | relURL }}">About our editorial standards&nbsp;&rarr;</a>
         </div>
       </aside>
     {{- end -}}
-  {{- else -}}
-    {{- /* realName empty — render nothing rather than leak placeholder */ -}}
-    <!-- author_block: realName not set in hugo.toml -->
-  {{- end -}}
 {{- end -}}

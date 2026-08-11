@@ -22,6 +22,12 @@ Most health and supplement content online is one of two things: (1) marketing fo
 
 This is **not a clinical practice** and **we are not your healthcare provider**. Reach us at [info@welnessjollof.com](mailto:info@welnessjollof.com) for editorial corrections or partnership inquiries.
 
+## Who reviews this content
+
+Content on Welness Jollof is written and reviewed by **Augustine Usifo**, a licensed pharmacist. Every guide is checked against peer-reviewed literature and recognised clinical guidelines before it is published — the same standard a pharmacist applies at the counter.
+
+You'll see a role-only "Reviewed by a licensed pharmacist" credit on each article; the full reviewer identity lives here, on this page, by design.
+
 ## Our editorial standards
 
 1. **Citations or it didn't happen.** Every concrete claim — dosage ranges, mechanism of action, evidence strength — links back to a peer-reviewed source (PubMed, Cochrane, NIH, FDA) or a recognised clinical guideline body (ADA, AHA, NICE).

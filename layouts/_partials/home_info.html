@@ -4,16 +4,24 @@
 */ -}}
 {{- with site.Params.homeInfoParams }}
 <article class="first-entry home-info">
-    {{ partial "home_author_strip.html" . }}
     <header class="entry-header home-hero-header">
+        <p class="home-hero-eyebrow">Pharmacist-reviewed · Evidence-led · Plain language</p>
         <h1 class="home-hero-title">{{ .Title | markdownify }}</h1>
+        {{- with .Content }}
+        <p class="home-hero-subhead">{{ . }}</p>
+        {{- end }}
     </header>
-    {{- with .Content -}}
-    <div class="entry-content md-content">
-        {{ $opts := dict "display" "block" }}
-        {{ . | $.Page.RenderString $opts }}
+    {{ partial "home_author_strip.html" . }}
+    <div class="home-hero-cta">
+        <a class="hero-btn hero-btn--primary" href="{{ "posts/" | relURL }}">Read the latest guides&nbsp;&rarr;</a>
+        <a class="hero-btn hero-btn--accent" href="{{ "posts/lassa-fever-early-signs-nigeria/" | relURL }}">🏠&nbsp;Free Lassa home-check</a>
     </div>
-    {{- end -}}
+    <div class="home-trust-band" aria-label="Sources we cite">
+        <span class="home-trust-band__label">Every claim traced to a source</span>
+        <span class="home-trust-band__pills">
+            <span>WHO</span><span>NCDC</span><span>PubMed</span><span>Cochrane</span><span>NAFDAC</span>
+        </span>
+    </div>
 
     {{- /* Category cards. Each card's URL should target a Hugo taxonomy term
            page (e.g. /categories/nerve-health/). If the taxonomy term exists

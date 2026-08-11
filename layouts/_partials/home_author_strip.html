@@ -7,24 +7,26 @@
 */ -}}
 {{- with site.Params.author -}}
   {{- if .realName -}}
-<aside class="home-author-strip" itemscope itemtype="https://schema.org/Person" aria-label="About the author">
+  {{- /* Name-off (2026-08-11 owner directive): the home strip is role-only — no
+         realName on this always-visible surface. Full name lives on /about/. */ -}}
+<aside class="home-author-strip" aria-label="Editorial standards">
   <img
     class="home-author-strip__avatar"
     src="{{ .avatarPath | relURL }}"
     width="56" height="56"
-    alt="Avatar of {{ .realName }}"
+    alt="Pharmacist-reviewed"
     loading="eager"
     decoding="async">
   <div class="home-author-strip__text">
-    <div class="home-author-strip__name" itemprop="name">{{ .realName }}</div>
-    <div class="home-author-strip__role" itemprop="jobTitle">{{ .role }}</div>
+    <div class="home-author-strip__name">Reviewed by a licensed pharmacist</div>
+    <div class="home-author-strip__role">Evidence-led · plain language</div>
   </div>
   {{- /* NOTE: no leading slash on the path — relURL on a project-pages
          baseURL (https://user.github.io/welnessjollof/) strips the subpath
          prefix when the input begins with "/", producing a 404. Same bug
          pattern caught earlier with avatar/logo/og-image. Keep it as
          "about/" (no leading slash). */ -}}
-  <a class="home-author-strip__link" href="{{ "about/" | relURL }}" aria-label="Read about {{ .realName }}">
+  <a class="home-author-strip__link" href="{{ "about/" | relURL }}" aria-label="About our editorial standards">
     About&nbsp;&rarr;
   </a>
 </aside>

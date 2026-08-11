@@ -16,7 +16,7 @@ Welness Jollof is a content website. We do not require accounts, do not store cr
 
 ## Who we are
 
-**Welness Jollof** (welnessjollof.com), operated by Augustine Usifo, Lagos, Nigeria.
+**Welness Jollof** (welnessjollof.com), operated by PharmaMotion Ltd, Lagos, Nigeria.
 Privacy contact: **info@welnessjollof.com**
 
 ## What we collect

@@ -2,15 +2,18 @@
        Adds a map-type branch so a [params.author] TOML table whose fields are
        realName/role/credentials/etc. renders the realName string in <meta name="author">
        instead of dumping the Go-map representation. */ -}}
-{{- if or .Params.author site.Params.author }}
-    {{- $author := (.Params.author | default site.Params.author) }}
-    {{- $author_type := (printf "%T" $author) }}
-
-    {{- if (or (eq $author_type "[]string") (eq $author_type "[]interface {}")) }}
-        {{- (delimit $author ", " ) }}
-    {{- else if reflect.IsMap $author }}
-        {{- with $author.realName | default $author.name }}{{- . -}}{{- end }}
-    {{- else }}
-        {{- $author }}
-    {{- end }}
+{{- /* Name-off (2026-08-11 owner directive): the <meta name="author"> tag emits
+       the BRAND, not the person. The personal name is confined to the /about/
+       page body. Page-level `author:` frontmatter (a real string) still wins so
+       a guest byline can be set explicitly; otherwise fall back to the site
+       title, never the [params.author] map (which carries realName + Biofem). */ -}}
+{{- $pageAuthor := .Params.author -}}
+{{- if and $pageAuthor (ne (printf "%T" $pageAuthor) "map[string]interface {}") -}}
+    {{- if (or (eq (printf "%T" $pageAuthor) "[]string") (eq (printf "%T" $pageAuthor) "[]interface {}")) -}}
+        {{- delimit $pageAuthor ", " -}}
+    {{- else -}}
+        {{- $pageAuthor -}}
+    {{- end -}}
+{{- else -}}
+    {{- site.Title -}}
 {{- end -}}
