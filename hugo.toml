@@ -15,6 +15,7 @@ ShowShareButtons = true
 ShowPostNavLinks = true
 ShowCodeCopyButtons = true
 ShowToc = true
+TocOpen = true
 ShowBreadCrumbs = true
 disableScrollToTop = false
 # Byline name-off (2026-08-11 owner directive): drop the author name from every

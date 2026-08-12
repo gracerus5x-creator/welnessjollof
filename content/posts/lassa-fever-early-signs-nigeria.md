@@ -38,6 +38,12 @@ See a doctor early if you notice:
 - **Bleeding** from the gums, nose, or eyes
 - **Facial swelling or confusion** — later, dangerous signs
 
+{{< funnel
+  title="Protect your whole family — the Lassa Fever 2026 Survival Guide"
+  desc="A pharmacist's step-by-step plan to spot the signs early, rat-proof your home, and know exactly when to act."
+  cta="Get the survival guide"
+  url="https://selar.com/lassafever2026thenigerianfamilysurvivalguide" >}}
+
 ## How Lassa spreads (this is what prevention targets)
 
 The virus comes from the **multimammate rat**, shed in its **urine and
@@ -65,4 +71,8 @@ runs a free emergency line: **6232**.
 *Sources: World Health Organization (Lassa fever fact sheet); Nigeria Centre for
 Disease Control (NCDC) situation reports, 2026.*
 
-{{< funnel title="Protect your whole family — get the Lassa Fever 2026 Survival Guide" url="https://selar.com/lassafever2026thenigerianfamilysurvivalguide" >}}
+{{< funnel
+  title="Don't wait for an outbreak — get the family survival guide"
+  desc="Everything in this article, plus a printable home checklist and an emergency action plan — written by a pharmacist."
+  cta="Get the survival guide"
+  url="https://selar.com/lassafever2026thenigerianfamilysurvivalguide" >}}

@@ -1,11 +1,24 @@
 {{/*
-  Minimal funnel shortcode — renders a simple CTA card.
-  Used by legacy articles that reference {{< funnel >}}.
-  Future: replace with full conversion funnel from Hyperframes.
+  funnel — in-article conversion CTA card (Selar guide / lead magnet).
+  Params:
+    title  (required) headline of the offer
+    url    (required) destination (Selar etc.)
+    desc   (optional) one-line supporting sentence
+    cta    (optional) button label — default "Get the guide"
+    kicker (optional) small eyebrow label — default "Take-home guide"
+    icon   (optional) emoji — default 🛡️
+  Styled by `.wj-cta` in assets/css/extended/brand.css.
 */}}
-<div class="funnel-cta" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e5e7eb; border-radius: 12px; background: #fafafa;">
-  <p style="margin: 0; font-weight: 600;">{{ .Get "title" | default "Get the full guide" }}</p>
+<aside class="wj-cta">
+  <div class="wj-cta__icon" aria-hidden="true">{{ .Get "icon" | default "🛡️" }}</div>
+  <div class="wj-cta__body">
+    <p class="wj-cta__kicker">{{ .Get "kicker" | default "Take-home guide" }}</p>
+    <p class="wj-cta__title">{{ .Get "title" | default "Get the full guide" }}</p>
+    {{ with .Get "desc" }}<p class="wj-cta__desc">{{ . }}</p>{{ end }}
+  </div>
   {{ with .Get "url" }}
-  <p style="margin: 0.6em 0 0;"><a href="{{ . }}" rel="nofollow sponsored">Continue reading →</a></p>
+  <a class="wj-cta__btn" href="{{ . }}" rel="nofollow sponsored noopener" target="_blank">
+    {{ $.Get "cta" | default "Get the guide" }}&nbsp;<span aria-hidden="true">&rarr;</span>
+  </a>
   {{ end }}
-</div>
+</aside>
