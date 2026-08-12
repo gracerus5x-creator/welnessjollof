@@ -51,7 +51,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+          hugo --gc --minify --baseURL "https://www.welnessjollof.com/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
