@@ -1,0 +1,12 @@
+{{- /* Shared lazy-load YouTube facade markup. Pass a video dict from
+       data/videos.yaml. The click-to-load JS lives in extend_footer.html
+       (loaded once site-wide). */ -}}
+{{- $v := . -}}
+{{- /* Prefer a local branded cover; fall back to YouTube's thumbnail. */ -}}
+{{- $poster := $v.poster | default (printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" $v.youtube) -}}
+<div class="yt-facade" data-ytid="{{ $v.youtube }}">
+  <img class="yt-facade__thumb" src="{{ $poster }}" alt="{{ $v.title }}" loading="lazy" width="1000" height="1000">
+  <button class="yt-facade__btn" type="button" aria-label="Play video: {{ $v.title }}">
+    <span class="yt-facade__play" aria-hidden="true">&#9658;</span>
+  </button>
+</div>

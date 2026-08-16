@@ -1,0 +1,33 @@
+# Video registry — the single source of truth for all site videos.
+# Add a new video by adding an entry under `videos:`. This drives the
+# /videos hub page, the homepage "Watch" band, and the ytvideo shortcode.
+# Selar links live under `selar:` so the CTA link is updated in ONE place.
+
+selar:
+  lassa: https://selar.com/lassafever2026thenigerianfamilysurvivalguide
+  silentkillers: https://selar.com/tooyoungtobesick
+
+videos:
+  - key: silentkillers
+    youtube: KvL9tQgp1Jk
+    poster: /img/video/silentkillers.png
+    title: "Too Young to Be Sick? Hypertension & Diabetes in Your 20s & 30s"
+    description: "Why 'feeling fine' hides high blood pressure and diabetes in young Nigerians — and the numbers to know before it's too late."
+    uploadDate: "2026-08-14"
+    duration: "PT59S"
+    category: "Family Health"
+    selar: silentkillers
+    article: "/posts/too-young-to-be-sick-hypertension-diabetes-nigeria/"
+    ctaLabel: "Get the Silent Killers guide"
+
+  - key: lassa
+    youtube: 5Q4Sb2hiE6s
+    poster: /img/video/lassa.png
+    title: "Lassa Fever in Nigeria: The Early Signs Most People Miss"
+    description: "How Lassa fever hides as malaria, how it really spreads, and the simple steps that protect your home."
+    uploadDate: "2026-08-14"
+    duration: "PT59S"
+    category: "Family Health"
+    selar: lassa
+    article: "/posts/lassa-fever-early-signs-nigeria/"
+    ctaLabel: "Get the Lassa survival guide"

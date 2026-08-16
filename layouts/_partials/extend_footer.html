@@ -1,0 +1,19 @@
+{{- /* Lazy-load YouTube facade: swap the poster+button for the real iframe on
+       click. Loaded site-wide so it works on articles, the /videos hub and the
+       homepage band alike. Only injected on pages that actually have a facade. */ -}}
+{{- if or (findRE "yt-facade" .Content) (eq .Kind "home") (eq .Section "videos") }}
+<script>
+(function(){
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.yt-facade__btn'); if (!btn) return;
+    var box = btn.closest('.yt-facade'); var id = box.getAttribute('data-ytid');
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+    f.title = 'YouTube video player'; f.loading = 'lazy';
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.allowFullscreen = true; f.className = 'yt-facade__iframe';
+    box.classList.add('is-playing'); box.innerHTML = ''; box.appendChild(f);
+  });
+})();
+</script>
+{{- end }}

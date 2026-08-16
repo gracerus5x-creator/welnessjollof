@@ -114,6 +114,27 @@
   </section>
   {{- end }}
 
+  {{- $featuredVid := "" }}{{ with site.Data.videos.videos }}{{ $featuredVid = index . 0 }}{{ end }}
+  {{- with $featuredVid }}
+  <!-- ===== WATCH BAND ===== -->
+  <section class="wj-wrap wj-section wj-section--tight">
+    <div class="wj-evrule"><span class="wj-eyebrow">Watch</span></div>
+    <div class="wj-watch">
+      {{ partial "ytfacade.html" . }}
+      <div class="wj-watch__body">
+        <span class="wj-eyebrow">{{ .category }} · 60-second guide</span>
+        <h2 class="wj-watch__title">{{ .title }}</h2>
+        <p class="wj-watch__desc">{{ .description }}</p>
+        <div class="wj-watch__cta">
+          <a class="wj-btn wj-btn--primary" href="{{ "videos/" | relURL }}">See all videos <span aria-hidden="true">&rarr;</span></a>
+          {{- $selar := index site.Data.videos.selar .selar }}
+          <a class="wj-btn wj-btn--accent" href="{{ $selar }}" rel="nofollow sponsored noopener" target="_blank">{{ .ctaLabel }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{- end }}
+
   <!-- ===== NEWSLETTER ===== -->
   <section class="wj-wrap wj-section">
     <div class="wj-news">

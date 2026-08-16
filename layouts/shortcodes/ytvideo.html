@@ -1,0 +1,26 @@
+{{- /*
+  ytvideo — lazy-load YouTube embed + VideoObject JSON-LD + Selar CTA.
+  Loads a static thumbnail + play button; the iframe only loads on click, so
+  embeds never hurt Core Web Vitals. Usage:  {{< ytvideo key="lassa" >}}
+  `key` looks the video up in data/videos.yaml. cta="false" hides the CTA.
+*/ -}}
+{{- $key := .Get "key" -}}
+{{- $v := "" -}}
+{{- range site.Data.videos.videos }}{{ if eq .key $key }}{{ $v = . }}{{ end }}{{ end -}}
+{{- if not $v }}{{ warnf "ytvideo: unknown key %q" $key }}{{ else -}}
+{{- $selar := "" }}{{ with site.Data.videos.selar }}{{ $selar = index . $v.selar }}{{ end -}}
+{{ partial "ytfacade.html" $v }}
+{{- if and (ne (.Get "cta") "false") $selar }}
+<aside class="wj-cta wj-cta--video">
+  <div class="wj-cta__icon" aria-hidden="true">📘</div>
+  <div class="wj-cta__body">
+    <p class="wj-cta__kicker">Take-home guide</p>
+    <p class="wj-cta__title">Want the full, take-home version?</p>
+    <p class="wj-cta__desc">Everything in the video, plus the complete pharmacist-written guide.</p>
+  </div>
+  <a class="wj-cta__btn" href="{{ $selar }}" rel="nofollow sponsored noopener" target="_blank">{{ $v.ctaLabel | default "Get the guide" }}&nbsp;<span aria-hidden="true">&rarr;</span></a>
+</aside>
+{{- end }}
+{{- $ld := dict "@context" "https://schema.org" "@type" "VideoObject" "name" $v.title "description" $v.description "thumbnailUrl" (printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" $v.youtube) "uploadDate" $v.uploadDate "duration" $v.duration "embedUrl" (printf "https://www.youtube.com/embed/%s" $v.youtube) "contentUrl" (printf "https://www.youtube.com/shorts/%s" $v.youtube) -}}
+<script type="application/ld+json">{{ $ld | jsonify | safeHTML }}</script>
+{{- end -}}

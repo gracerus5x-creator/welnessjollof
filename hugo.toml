@@ -125,6 +125,12 @@ url = "posts/"
 weight = 10
 
 [[menu.main]]
+identifier = "videos"
+name = "Watch"
+url = "videos/"
+weight = 15
+
+[[menu.main]]
 identifier = "about"
 name = "About"
 url = "/about/"

@@ -1,6 +1,7 @@
 ---
 title: 'Lassa Fever in Nigeria: Early Signs, Prevention, and When to Act'
 date: '2026-08-05T09:00:00Z'
+lastmod: '2026-08-14'
 draft: false
 description: Lassa fever starts like malaria then turns deadly. A pharmacist's
   plain-language guide to the early warning signs, how it spreads, and how to
@@ -21,6 +22,12 @@ single biggest reason is that people reach hospital **too late**. It starts
 looking exactly like malaria, so it gets waved off. This guide covers the early
 signs, how it actually spreads, and the simple steps that protect your household.
 
+{{< freshness ncdc="https://ncdc.gov.ng/diseases/sitreps" >}}
+
+**Watch: the 60-second version** — then read on for the full guide.
+
+{{< ytvideo key="lassa" >}}
+
 ## Why Lassa is so easy to miss
 
 In its first days Lassa looks like ordinary malaria: fever, weakness, headache.
@@ -37,12 +44,6 @@ See a doctor early if you notice:
 - **Nausea, vomiting, or diarrhoea**
 - **Bleeding** from the gums, nose, or eyes
 - **Facial swelling or confusion** — later, dangerous signs
-
-{{< funnel
-  title="Protect your whole family — the Lassa Fever 2026 Survival Guide"
-  desc="A pharmacist's step-by-step plan to spot the signs early, rat-proof your home, and know exactly when to act."
-  cta="Get the survival guide"
-  url="https://selar.com/lassafever2026thenigerianfamilysurvivalguide" >}}
 
 ## How Lassa spreads (this is what prevention targets)
 

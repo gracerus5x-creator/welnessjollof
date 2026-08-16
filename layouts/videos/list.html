@@ -1,0 +1,31 @@
+{{- define "main" }}
+<div class="vhub-page">
+  <section class="wj-wrap wj-section wj-section--tight">
+    <div class="vhub-head">
+      <p class="wj-eyebrow">Watch</p>
+      <h1 class="vhub-title">Pharmacist-made health videos</h1>
+      {{- with .Description }}<p class="vhub-sub">{{ . }}</p>{{ end }}
+    </div>
+
+    <div class="vhub">
+      {{- range site.Data.videos.videos }}
+      {{- $selar := index site.Data.videos.selar .selar }}
+      <article class="vhub__card">
+        {{ partial "ytfacade.html" . }}
+        <div class="vhub__body">
+          <span class="vhub__tag">{{ .category }}</span>
+          <h2 class="vhub__title">{{ .title }}</h2>
+          <p class="vhub__desc">{{ .description }}</p>
+          <div class="vhub__actions">
+            <a class="wj-btn wj-btn--accent wj-btn--sm" href="{{ $selar }}" rel="nofollow sponsored noopener" target="_blank">{{ .ctaLabel }}&nbsp;&rarr;</a>
+            {{- with .article }}<a class="vhub__read" href="{{ . | relURL }}">Read the guide&nbsp;&rarr;</a>{{ end }}
+          </div>
+        </div>
+        {{- $ld := dict "@context" "https://schema.org" "@type" "VideoObject" "name" .title "description" .description "thumbnailUrl" (printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" .youtube) "uploadDate" .uploadDate "duration" .duration "embedUrl" (printf "https://www.youtube.com/embed/%s" .youtube) "contentUrl" (printf "https://www.youtube.com/shorts/%s" .youtube) -}}
+        <script type="application/ld+json">{{ $ld | jsonify | safeHTML }}</script>
+      </article>
+      {{- end }}
+    </div>
+  </section>
+</div>
+{{- end }}

@@ -1,0 +1,13 @@
+{{- /*
+  freshness — a tasteful "Last updated" line for time-sensitive articles.
+  Date is pulled from the page's Lastmod (front-matter `lastmod` or git), so it
+  stays accurate automatically. Usage:
+      {{< freshness ncdc="https://ncdc.gov.ng/diseases/sitreps" >}}
+*/ -}}
+{{- $ncdc := .Get "ncdc" | default "https://ncdc.gov.ng/diseases/sitreps" -}}
+<p class="wj-freshness">
+  <span class="wj-freshness__dot" aria-hidden="true"></span>
+  Last updated: <time datetime="{{ .Page.Lastmod.Format "2006-01-02" }}">{{ .Page.Lastmod.Format "2 January 2006" }}</time>
+  · Outbreak figures shift weekly — check the latest
+  <a href="{{ $ncdc }}" rel="noopener" target="_blank">NCDC situation reports</a>.
+</p>
