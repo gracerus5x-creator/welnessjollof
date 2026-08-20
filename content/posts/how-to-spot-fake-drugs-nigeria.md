@@ -93,6 +93,8 @@ Two cautions: not every product has a panel yet, so its *absence* alone is not p
 of a fake — but **wherever a panel exists, use it, and favour brands that carry
 one.** And a **"fake" reply, or an already-scratched panel, is a hard stop.**
 
+{{< funnel title="Is Your Drug Real? The 5-Minute Fake-Medicine Check" url="https://selar.com/fakedrugcheck" desc="The full pocket method — all five verification codes, the checklist to screenshot at the counter, and exactly why a clone can't beat the code." cta="Get the guide" kicker="Take-home guide" icon="🛡️" >}}
+
 ## Where this is going: a fingerprint on every pack
 
 The scratch code was the first generation. In October 2024 NAFDAC published the
