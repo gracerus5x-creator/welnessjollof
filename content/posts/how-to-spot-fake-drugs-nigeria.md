@@ -17,10 +17,10 @@ disclosure: This article is for information only and is not a diagnosis or a tre
 ---
 
 Fake medicines are having a frightening moment in Nigeria. In September 2025,
-NAFDAC officers seized nearly **half a million doses of fake antimalarials** —
-about ₦1.2 billion worth — hidden in a single Lagos warehouse, and it was only one
-of many such raids on counterfeit **diabetes**, **cancer**, and **malaria** drugs.
-The scale behind the headlines is real: a 2024 review of studies across Africa
+NAFDAC announced the seizure of **277 cartons of fake, unregistered antimalarials**
+— over ₦1.2 billion worth, close to **half a million doses** — concealed in a Lagos
+warehouse and falsely declared as spare parts, and warned it pointed to a **wider
+counterfeit threat**. The scale behind the headlines is real: a 2024 review of studies across Africa
 found that about **22.6% — roughly 1 in 5 — of the medicines sampled were
 substandard or falsified**, and the World Health Organization reported that cases
 of fake and substandard medicines roughly **doubled between 2019 and 2023**.
@@ -112,9 +112,16 @@ scratch code above is still your best individual-pack check right now.
 
 ## When in doubt, don't take it
 
-If a pack fails any check, or your gut says something is off: **don't take it** — a
-missed dose is safer than a fake one — and **report it to NAFDAC** through their
-public enquiry lines, and tell the pharmacy.
+If a pack fails any check, or your gut says something is off, **don't take it** — a
+missed dose is safer than a fake one. Then **report it**, so it's pulled before the
+next buyer. (Note: the Greenbook is where you *verify* a drug — it isn't where you
+report one.) NAFDAC's free consumer channels:
+
+- **Text PRASCOR — free — to 20543** (NAFDAC's SMS alert line, all networks) with the
+  product name and what's wrong.
+- **Use the free Med-Safety app** (Android/iOS) to report with photos of the pack.
+- Or report online at **nafdac.gov.ng**, or at the nearest NAFDAC office — and tell
+  the pharmacy you bought it from.
 
 ## The pocket check
 
@@ -130,5 +137,6 @@ If you suspect a fake medicine, do not take it — report it to NAFDAC.*
 unregistered medicine… in Africa," Journal of Pharmaceutical Policy and Practice
 (2024); World Health Organization — Global surveillance and monitoring report
 (December 2024); National Agency for Food and Drug Administration and Control
-(NAFDAC) — Greenbook, the Mobile Authentication Service, and the Pharmaceutical
-Products (Traceability) Regulations, 2024; GS1 Nigeria.*
+(NAFDAC) — Greenbook, the Mobile Authentication Service, consumer complaint /
+PRASCOR & Med-Safety reporting, and the Pharmaceutical Products (Traceability)
+Regulations, 2024; GS1 Nigeria; Nairametrics (Sept 2025 seizure report).*
