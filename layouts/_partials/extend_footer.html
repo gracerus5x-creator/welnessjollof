@@ -1,7 +1,7 @@
 {{- /* Lazy-load YouTube facade: swap the poster+button for the real iframe on
        click. Loaded site-wide so it works on articles, the /videos hub and the
        homepage band alike. Only injected on pages that actually have a facade. */ -}}
-{{- if or (findRE "yt-facade" .Content) (eq .Kind "home") (eq .Section "videos") }}
+{{- if or (findRE "yt-facade" .Content) (eq .Kind "home") (hasPrefix .RelPermalink "/videos") }}
 <script>
 (function(){
   document.addEventListener('click', function (e) {
